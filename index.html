@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Campus — Planning completo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;padding:12px;background:#fff;color:#1a1a1a;font-size:14px}
+.mtabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap;border-bottom:1px solid #e0e0e0;padding-bottom:8px}
+.mt{padding:7px 11px;font-size:11px;font-weight:500;border-radius:6px;border:.5px solid #ccc;background:transparent;color:#666;cursor:pointer}
+.mt.active{color:#fff;border-color:transparent}
+.mt-cj.active{background:#2C3E50}.mt-re.active{background:#2C6B3F}.mt-al.active{background:#C9A800;color:#5A4200}.mt-in.active{background:#7B4FB5}.mt-fe.active{background:#C9560D}.mt-bs.active{background:#185FA5}.mt-gu.active{background:#880E4F}.mt-gm.active{background:#4A4A4A}.mt-gl.active{background:#34495E}
+.mpanel{display:none}.mpanel.active{display:block}
+.dtabs{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
+.dt{padding:5px 9px;font-size:11px;border-radius:6px;border:.5px solid #ccc;background:transparent;color:#666;cursor:pointer}
+.dt.active{background:#E3F0FF;color:#185FA5;border-color:transparent;font-weight:500}
+.colh{display:grid;grid-template-columns:68px 1fr 1fr 1fr;gap:4px;margin-bottom:6px}
+.ch{padding:7px;border-radius:6px;font-size:11px;font-weight:500;text-align:center}
+.ch1{background:#D85A30;color:#fff}.ch2{background:#888780;color:#fff}.ch3{background:#534AB7;color:#fff}
+.el{font-size:9px;opacity:.8;margin-bottom:3px}
+.gr{display:grid;grid-template-columns:68px 1fr 1fr 1fr;gap:4px;align-items:stretch;margin-bottom:3px}
+.tm{font-size:11px;color:#888;text-align:right;padding-right:8px;padding-top:6px;white-space:nowrap;font-weight:500}
+.ce{border-radius:6px;padding:5px 7px;border:.5px solid transparent;font-size:11px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.ct{font-weight:500;margin-bottom:2px;font-size:11px}
+.em{background:transparent;border-color:transparent}
+.cb{background:#FAEEDA;border-color:#FAC775;color:#854F0B}.cbv{background:#FAECE7;border-color:#F0997B;color:#993C1D}.ccp{background:#F1EFE8;border-color:#B4B2A9;color:#5F5E5A}.cbl{background:#EEEDFE;border-color:#AFA9EC;color:#3C3489}.cf{background:#EAF3DE;border-color:#97C459;color:#3B6D11}.cd{background:#E6F1FB;border-color:#85B7EB;color:#185FA5}.cn{background:#26215C;border-color:#534AB7;color:#EEEDFE}.cfi{background:#3D0A6B;border-color:#9B6ED4;color:#EEEDFE}.cz{background:#1A1A2E;border-color:#393975;color:#A9A9D4}.cr{background:#0F4C2A;border-color:#1D9E5C;color:#B6EFCF}.ce2{background:#FFF3CD;border-color:#FFCA28;color:#5A4200}.ccl{background:#D85A30;border-color:#B03A18;color:#fff}
+.sl{font-size:10px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.4px;padding:6px 0 2px 72px}
+.al2{display:flex;align-items:center;gap:4px;justify-content:center;margin-bottom:2px;font-size:10px;flex-wrap:wrap}
+.an{font-weight:500}
+.ba{background:#F5C800;color:#5A4200;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600;white-space:nowrap}
+.bi{background:#9B6ED4;color:#fff;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600;white-space:nowrap}
+.bf{background:#F07030;color:#fff;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600;white-space:nowrap}
+.bgs{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;margin-top:3px}
+.gtl{display:flex;flex-direction:column;gap:4px}
+.tr2{display:grid;grid-template-columns:68px 1fr;gap:6px;align-items:stretch;margin-bottom:4px}
+.tt{font-size:11px;color:#888;text-align:right;padding-right:8px;padding-top:8px;font-weight:500;white-space:nowrap}
+.tc{border-radius:8px;padding:8px 12px;border:.5px solid transparent}
+.tct{font-size:12px;font-weight:600;margin-bottom:2px}
+.tcd{font-size:11px;margin-top:3px;opacity:.85;white-space:pre-line}
+.gm2{background:#FFF8E1;border-color:#FFD54F;color:#5A4200}.gt{background:#E8F5E9;border-color:#81C784;color:#1B5E20}.gf2{background:#EAF3DE;border-color:#97C459;color:#3B6D11}.gb{background:#FAEEDA;border-color:#FAC775;color:#854F0B}.gd{background:#E6F1FB;border-color:#85B7EB;color:#185FA5}.gl2{background:#F3E5F5;border-color:#CE93D8;color:#4A148C}.gn{background:#26215C;border-color:#534AB7;color:#EEEDFE}.gz{background:#1A1A2E;border-color:#393975;color:#A9A9D4}.gr2{background:#0F4C2A;border-color:#1D9E5C;color:#B6EFCF}.ge{background:#FFF3CD;border-color:#FFCA28;color:#5A4200}.gfi{background:#3D0A6B;border-color:#9B6ED4;color:#EEEDFE}.gcl{background:#D85A30;border-color:#B03A18;color:#fff}
+.sep{font-size:10px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;padding:8px 0 2px 74px}
+.rg{display:flex;flex-direction:column;gap:8px}
+.rc{border-radius:10px;border:.5px solid transparent;overflow:hidden}
+.rh{padding:10px 14px;font-size:13px;font-weight:600}
+.rb2{padding:10px 14px;font-size:12px}
+.rw{font-weight:600;margin-bottom:3px;font-size:13px}
+.rn{font-size:11px;opacity:.8;margin-top:4px;font-style:italic}
+.r1{background:#FAECE7;border-color:#F0997B}.r1 .rh{background:#D85A30;color:#fff}.r1 .rb2{color:#993C1D}
+.r2{background:#EEEDFE;border-color:#AFA9EC}.r2 .rh{background:#534AB7;color:#fff}.r2 .rb2{color:#3C3489}
+.r3{background:#FBEAF0;border-color:#ED93B1}.r3 .rh{background:#D4537E;color:#fff}.r3 .rb2{color:#72243E}
+.r4{background:#F1EFE8;border-color:#B4B2A9}.r4 .rh{background:#888780;color:#fff}.r4 .rb2{color:#5F5E5A}
+.r5{background:#E6F1FB;border-color:#85B7EB}.r5 .rh{background:#378ADD;color:#fff}.r5 .rb2{color:#185FA5}
+.r6{background:#FAEEDA;border-color:#FAC775}.r6 .rh{background:#BA7517;color:#fff}.r6 .rb2{color:#854F0B}
+.r7{background:#EAF3DE;border-color:#97C459}.r7 .rh{background:#4A8B1F;color:#fff}.r7 .rb2{color:#3B6D11}
+.r8{background:#E1F5EE;border-color:#5DCAA5}.r8 .rh{background:#1D9E75;color:#fff}.r8 .rb2{color:#0F6E56}
+.r9{background:#FFF8E1;border-color:#FFD54F}.r9 .rh{background:#F9A825;color:#fff}.r9 .rb2{color:#5A4200}
+.r10{background:#26215C;border-color:#534AB7}.r10 .rh{background:#3D0A6B;color:#EEEDFE}.r10 .rb2{color:#EEEDFE}
+.r11{background:#0F4C2A;border-color:#1D9E5C}.r11 .rh{background:#0A3D22;color:#B6EFCF}.r11 .rb2{color:#B6EFCF}
+.tag{display:inline-block;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:600;margin-right:4px;margin-top:3px}
+.tm1{background:#F5C800;color:#5A4200}.tm2{background:#E91E8C;color:#fff}.tm3{background:#534AB7;color:#fff}.tm4{background:#888780;color:#fff}.tm5{background:#378ADD;color:#fff}.tm6{background:#0F4C2A;color:#B6EFCF}
+.binput{width:100%;font-size:14px;padding:9px 13px;border-radius:6px;border:.5px solid #ccc;margin-bottom:12px;background:#fff;color:#1a1a1a}
+.binput:focus{outline:none;box-shadow:0 0 0 2px #85B7EB}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chip{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:.5px solid transparent}
+.chip:hover{opacity:.8}
+.ca{background:#F5C800;color:#5A4200}.ci{background:#9B6ED4;color:#fff}.cfx{background:#F07030;color:#fff}
+.bres{min-height:60px}
+.nores{text-align:center;padding:28px 0;color:#888;font-size:14px}
+.ghead{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:.5px solid #e0e0e0}
+.gbadge{font-size:13px;font-weight:500;padding:4px 14px;border-radius:20px}
+.gname{font-size:15px;font-weight:500}
+.gmon{font-size:12px;color:#666;margin-left:4px}
+.ddtabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.ddt{padding:5px 9px;font-size:11px;border-radius:6px;border:.5px solid #ccc;background:transparent;color:#666;cursor:pointer}
+.ddt.active{background:#E3F0FF;color:#185FA5;border-color:transparent;font-weight:500}
+.bsched{display:flex;flex-direction:column;gap:5px}
+.brow{display:grid;grid-template-columns:68px 1fr;gap:8px;align-items:start;margin-bottom:5px}
+.btm{font-size:11px;color:#888;font-weight:500;text-align:right;padding-top:9px;white-space:nowrap}
+.bcard{border-radius:6px;padding:8px 12px;border:.5px solid transparent}
+.btt{font-size:12px;font-weight:500;margin-bottom:2px}
+.btd{font-size:11px;opacity:.8;line-height:1.5;white-space:pre-line}
+.bsep{font-size:10px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.4px;padding:8px 0 2px 76px}
+.bm{background:#FFF8E1;border-color:#FFD54F;color:#5A4200}.bta{background:#E8F5E9;border-color:#81C784;color:#1B5E20}.bfa{background:#EAF3DE;border-color:#97C459;color:#3B6D11}.bbus{background:#FAEEDA;border-color:#FAC775;color:#854F0B}.bdes{background:#E6F1FB;border-color:#85B7EB;color:#185FA5}.bli{background:#F3E5F5;border-color:#CE93D8;color:#4A148C}.bnoc{background:#26215C;border-color:#534AB7;color:#EEEDFE}.bdor{background:#1A1A2E;border-color:#393975;color:#A9A9D4}.breu{background:#0F4C2A;border-color:#1D9E5C;color:#B6EFCF}.besp{background:#FFF3CD;border-color:#FFCA28;color:#5A4200}.bfin{background:#3D0A6B;border-color:#9B6ED4;color:#EEEDFE}.bclo{background:#D85A30;border-color:#B03A18;color:#fff}
+.ginfo{background:#EAF3DE;border:.5px solid #97C459;border-radius:8px;padding:10px 14px;font-size:11px;color:#3B6D11;margin-bottom:16px;line-height:1.6}
+.ginfo strong{font-weight:600}
+.nights{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.ncard{border-radius:10px;overflow:hidden;border:.5px solid transparent}
+.nhead{padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.ntitle{font-size:14px;font-weight:600}
+.nmeta{font-size:11px;opacity:.85;font-weight:500}
+.nbody{padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px}
+.mtag{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:8px;font-size:12px;font-weight:500;background:rgba(255,255,255,.7);border:.5px solid rgba(0,0,0,.1)}
+.ng-dom{background:#F0EAF9;border-color:#B89DD9}.ng-dom .nhead{background:#7B4FB5;color:#fff}
+.ng-lun{background:#E7F3FD;border-color:#85B7EB}.ng-lun .nhead{background:#185FA5;color:#fff}
+.ng-mar{background:#FFF0E8;border-color:#F5A77A}.ng-mar .nhead{background:#C9560D;color:#fff}
+.ng-mie{background:#E8F5E9;border-color:#81C784}.ng-mie .nhead{background:#2C6B3F;color:#fff}
+.ng-jue{background:#FFF8E1;border-color:#FFD54F}.ng-jue .nhead{background:#B07800;color:#fff}
+.ng-vie{background:#FCE4EC;border-color:#F48FB1}.ng-vie .nhead{background:#880E4F;color:#fff}
+.gresumen h3{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:6px}
+.rcard{border-radius:8px;padding:8px 12px;background:#f5f5f5;border:.5px solid #e0e0e0;display:flex;align-items:center;justify-content:space-between}
+.rname{font-size:12px;font-weight:500}
+.rbadge{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;background:#D1FAE5;color:#065F46}
+.legend{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px;font-size:12px}
+.leg-dot{width:12px;height:12px;border-radius:3px}
+.blabel{font-size:13px;color:#666;margin-bottom:8px;display:block}
+/* GRUPOS Y MONITORES */
+.gm-section{margin-bottom:24px}
+.gm-title{font-size:15px;font-weight:700;margin-bottom:12px;padding:8px 14px;border-radius:8px;color:#fff}
+.gm-al{background:#B09000}.gm-in{background:#6B3FB0}.gm-fe{background:#C9560D}
+.gm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.gm-card{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;border:.5px solid transparent}
+.gm-card-al{background:#FFF8DC;border-color:#F5C800}.gm-card-in{background:#F3EFFE;border-color:#9B6ED4}.gm-card-fe{background:#FFF0E8;border-color:#F07030}
+.gm-group{font-size:12px;font-weight:700;min-width:80px}
+.gm-arrow{font-size:14px;color:#aaa}
+.gm-monitor{font-size:13px;font-weight:500}
+/* LLISTA GRUPS */
+.gl-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.gl-btn{padding:6px 14px;font-size:12px;font-weight:500;border-radius:20px;border:.5px solid #ccc;background:transparent;color:#666;cursor:pointer;transition:all .15s}
+.gl-btn:hover{opacity:.8}
+.gl-btn.act{color:#fff;border-color:transparent}
+.gl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.gl-card{border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.gl-head{padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.gl-htitle{font-size:13px;font-weight:700;color:#fff}
+.gl-hmeta{font-size:11px;color:rgba(255,255,255,.9)}
+.gl-table{width:100%;border-collapse:collapse;font-size:11px}
+.gl-table th{padding:5px 8px;background:#f5f5f5;color:#555;font-weight:600;text-align:left;border-bottom:1px solid #e8e8e8}
+.gl-table td{padding:5px 8px;border-bottom:.5px solid #f2f2f2;vertical-align:middle}
+.gl-table tr:last-child td{border-bottom:none}
+.gl-porter td{background:#EBF5FB}
+.gl-intol td{background:#FEF9E7}
+.gl-tag-p{background:#2980B9;color:#fff;font-size:9px;padding:1px 6px;border-radius:4px;font-weight:600}
+.gl-tag-j{background:#27AE60;color:#fff;font-size:9px;padding:1px 6px;border-radius:4px;font-weight:600}
+.gl-obs{font-size:10px;color:#C0392B;font-weight:600}
+.gl-any{font-size:10px;color:#888;background:#f0f0f0;padding:1px 5px;border-radius:3px}
+
+.mtabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;border-bottom:1px solid #e0e0e0;padding-bottom:8px}
+.mt{padding:7px 10px;font-size:11px;font-weight:500;border-radius:6px;border:.5px solid #ccc;background:transparent;color:#666;cursor:pointer;white-space:nowrap}
+.mt.active{color:#fff;border-color:transparent}
+.sub-tabs{display:flex;gap:4px;margin-bottom:14px;background:#EEE;border-radius:10px;padding:4px;flex-wrap:wrap}
+.sub-tab{flex:1;min-width:70px;padding:8px 4px;font-size:11px;font-weight:600;border-radius:8px;border:none;background:transparent;color:#666;cursor:pointer;text-align:center}
+.sub-tab.active{background:#fff;color:#2C3E50;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.sub-panel{display:none}.sub-panel.active{display:block}
+.mt-ic.active{background:#2C6B3F}.mt-gc.active{background:#C9560D}.mt-tr.active{background:#0D47A1}
+.mt-it.active{background:#C0392B}.mt-fo.active{background:#1A6B3C}.mt-pu.active{background:#B07800}.mt-tg.active{background:#D4A800}
+
+.pu-stars-card{background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;border:.5px solid #e8e8e8}
+.pu-stars-name{font-size:13px;font-weight:600;color:#2C3E50;margin-bottom:8px}
+.pu-stars-row{display:flex;gap:6px}
+.pu-star{font-size:30px;cursor:pointer;color:#ddd;transition:transform .1s;user-select:none;-webkit-user-select:none}
+.pu-star.filled{color:#FFC107}
+.pu-star:active{transform:scale(1.2)}
+.pu-neg-card{background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;border:.5px solid #FFCDD2;display:flex;align-items:center;justify-content:space-between}
+.pu-neg-info{flex:1}
+.pu-neg-name{font-size:13px;font-weight:600;color:#C0392B}
+.pu-neg-pts{font-size:11px;color:#888;margin-top:2px}
+.pu-neg-ctrl{display:flex;align-items:center;gap:10px}
+.pu-neg-count{font-size:18px;font-weight:700;color:#C0392B;min-width:24px;text-align:center}
+.pu-neg-btn{width:36px;height:36px;border-radius:50%;border:none;font-size:20px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pu-btn-add{background:#FFCDD2;color:#C0392B}
+.pu-btn-rem{background:#F5F5F5;color:#999}
+.pu-save-btn2{width:100%;padding:14px;font-size:15px;font-weight:700;color:#fff;background:#2C6B3F;border:none;border-radius:12px;cursor:pointer;margin-top:4px}
+.rk-item2{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:11px 14px;margin-bottom:7px;border:.5px solid #eee}
+.rk-pos2{font-size:16px;font-weight:800;width:30px;text-align:center;color:#888}
+.rk-pos2.gold{color:#D4A017}.rk-pos2.silver{color:#9C9C9C}.rk-pos2.bronze{color:#B5651D}
+.rk-info2{flex:1}
+.rk-name2{font-size:14px;font-weight:600;color:#1a1a1a}
+.rk-sub2{font-size:11px;color:#999;margin-top:2px}
+.rk-score2{font-size:18px;font-weight:800;color:#2C6B3F}
+.rk-score2.neg{color:#C0392B}
+.rk-item2.top3{border:1.5px solid #FFD700;background:linear-gradient(135deg,#FFFDF5,#FFF9E6)}
+.rk-band2{display:inline-flex;align-items:center;gap:3px;background:#FFD700;color:#5A4200;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:8px;margin-top:3px}
+.rk-empty2{text-align:center;padding:40px 0;color:#aaa;font-size:13px}
+.rk-grup-section{margin-bottom:20px}
+.rk-grup-title{font-size:13px;font-weight:700;color:#fff;padding:7px 14px;border-radius:8px;margin-bottom:8px;display:inline-block}
+
+/* iOS Safari fixes */
+* { -webkit-tap-highlight-color: transparent; }
+input, select, textarea { -webkit-appearance: none; border-radius: 0; }
+select { -webkit-appearance: none; appearance: none; }
+button { -webkit-appearance: none; touch-action: manipulation; }
+.mt, .dt, .sub-tab, .chip, .gl-btn, .pu-star, .pu-neg-btn, .pu-save-btn2 {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.pu-neg-btn { -webkit-user-select: none; user-select: none; }
+</style>
+</head>
+<body>
+<div class="mtabs">
+  <button class="mt mt-cj active" onclick="sM('cj',this)">📅 Calendari</button>
+  <button class="mt mt-ic" onclick="sM('ic',this)">👥 Info</button>
+  <button class="mt mt-gc" onclick="sM('gc',this)">⚽ Grups</button>
+  <button class="mt mt-bs" onclick="sM('bs',this)">🔍 Buscar</button>
+  <button class="mt mt-tr" onclick="sM('tr',this)">🚌 Transport</button>
+  <button class="mt mt-it" onclick="sM('it',this)">⚠️ Intol.</button>
+  <button class="mt mt-fo" onclick="sM('fo',this)">📸 Fotos</button>
+  <button class="mt mt-pu" onclick="sM('pu',this)">🏆 Punts</button>
+  <button class="mt mt-tg" onclick="sM('tg',this)">🟡 Targetes</button>
+</div>
+
+<!-- CALENDARIO -->
+<div class="mpanel active" id="mp-cj">
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:#F5C800"></div>Alevín masc.</div>
+  <div class="leg"><div class="leg-dot" style="background:#9B6ED4"></div>Infantil masc.</div>
+  <div class="leg"><div class="leg-dot" style="background:#F07030"></div>Femenino</div>
+</div>
+<div class="dtabs">
+  <button class="dt active" data-day="dom" onclick="sCD('dom',this)">Domingo</button>
+  <button class="dt" data-day="lun" onclick="sCD('lun',this)">Lunes</button>
+  <button class="dt" data-day="mar" onclick="sCD('mar',this)">Martes</button>
+  <button class="dt" data-day="mie" onclick="sCD('mie',this)">Miércoles</button>
+  <button class="dt" data-day="jue" onclick="sCD('jue',this)">Jueves</button>
+  <button class="dt" data-day="vie" onclick="sCD('vie',this)">Viernes</button>
+  <button class="dt" data-day="sab" onclick="sCD('sab',this)">Sábado</button>
+</div>
+<div id="cdcont"></div>
+</div>
+
+<!-- RESPONSABLES -->
+
+
+<!-- ALEVÍN -->
+
+
+<!-- INFANTIL -->
+
+
+<!-- FEMENINO -->
+
+
+<!-- BUSCADOR -->
+<div class="mpanel" id="mp-ic"><div class="sub-tabs"><button class="sub-tab active" onclick="sS('ic','re',this)">👥 Responsables</button><button class="sub-tab" onclick="sS('ic','gu',this)">🌙 Guardes</button><button class="sub-tab" onclick="sS('ic','gm',this)">📋 Grups</button><button class="sub-tab" onclick="sS('ic','gl',this)">👥 Llista</button><button class="sub-tab" onclick="sS('ic','hm',this)">🛏️ Hab. Monitors</button></div><div class="sub-panel active" id="ic-re">
+<div class="rg">
+<div class="rc r1"><div class="rh">🏟️ Bolvir — Kings League + Retos + Piscina Bolvir</div><div class="rb2"><div class="rw"><span class="tag tm1">Monitores de grupo</span> responsables de llevar las actividades</div><div class="rn">Cada monitor acompaña a su grupo durante toda la jornada en Bolvir.</div></div></div>
+<div class="rc r2"><div class="rh">🏟️ Pista Bellver</div><div class="rb2"><div class="rw"><span class="tag tm3">Chus Esteban</span> encargado de llevar la sesión</div></div></div>
+<div class="rc r3"><div class="rh">🏐 Voley playa</div><div class="rb2"><div class="rw"><span class="tag tm1">Monitores de grupo</span> responsables de llevar las actividades</div></div></div>
+<div class="rc r4"><div class="rh">⬛ Pista gris (Fútbol sala)</div><div class="rb2"><div class="rw"><span class="tag tm4">Cristian Solís</span> encargado de llevar la sesión</div></div></div>
+<div class="rc r5"><div class="rh">🟦 Pista azul (Fútbol sala)</div><div class="rb2"><div class="rw"><span class="tag tm5">Invitados especiales</span> encargados de llevar la sesión</div></div></div>
+<div class="rc r6"><div class="rh">🎪 Hinchables</div><div class="rb2"><div class="rw"><span class="tag tm1">Monitores de grupo</span> responsables de llevar las actividades</div></div></div>
+<div class="rc r7"><div class="rh">🌿 Césped — Dinámicas</div><div class="rb2"><div class="rw"><span class="tag tm2">Emma i Bet</span> encargadas de dinamizar</div></div></div>
+<div class="rc r8"><div class="rh">🏊 Piscina (campus)</div><div class="rb2"><div class="rw"><span class="tag tm2">Emma i Bet</span> encargadas de dinamizar</div></div></div>
+<div class="rc r9"><div class="rh">🍽️ Comidas</div><div class="rb2"><div class="rw"><span class="tag tm2">Emma i Bet</span> encargadas de organizar el comedor</div><div class="rn">• Intolerantes entran primero · Ordenar comedor</div></div></div>
+<div class="rc r10"><div class="rh">🌙 Actividades nocturnas</div><div class="rb2"><div class="rw"><span class="tag tm1">Monitores de grupo</span> responsables · Emma i Bet de soporte</div></div></div>
+<div class="rc r11"><div class="rh">📋 Reunión de monitores — 22:40 cada noche</div><div class="rb2"><div class="rw"><span class="tag tm6">Todos los monitores</span> reunión de feedback diaria</div><div class="rn">Cada noche a las 22:40 — feedback, coordinación y planificación del día siguiente.</div></div></div>
+</div>
+</div><div class="sub-panel" id="ic-gu">
+<div class="ginfo"><strong>14 monitores · 1 guardia cada uno</strong><br>6 noches (Dom–Vie) · 2–3 personas por noche</div>
+<div class="nights">
+  <div class="ncard ng-dom"><div class="nhead"><span class="ntitle">🌙 Domingo noche</span><span class="nmeta">3 personas</span></div><div class="nbody"><div class="mtag">👤 Paula Jiménez</div><div class="mtag">👤 Luis Medina</div><div class="mtag">👤 Emma Cardona</div></div></div>
+  <div class="ncard ng-lun"><div class="nhead"><span class="ntitle">🌙 Lunes noche</span><span class="nmeta">3 personas</span></div><div class="nbody"><div class="mtag">👤 Biel Gay</div><div class="mtag">👤 Helena</div><div class="mtag">👤 Bet</div></div></div>
+  <div class="ncard ng-mar"><div class="nhead"><span class="ntitle">🌙 Martes noche</span><span class="nmeta">2 personas</span></div><div class="nbody"><div class="mtag">👤 Laura Latorre</div><div class="mtag">👤 Marcel Bravo</div></div></div>
+  <div class="ncard ng-mie"><div class="nhead"><span class="ntitle">🌙 Miércoles noche</span><span class="nmeta">2 personas</span></div><div class="nbody"><div class="mtag">👤 Víctor Sánchez</div><div class="mtag">👤 Víctor Ramos</div></div></div>
+  <div class="ncard ng-jue"><div class="nhead"><span class="ntitle">🌙 Jueves noche</span><span class="nmeta">2 personas</span></div><div class="nbody"><div class="mtag">👤 Hugo</div><div class="mtag">👤 Sandra García</div></div></div>
+  <div class="ncard ng-vie"><div class="nhead"><span class="ntitle">🌙 Viernes noche</span><span class="nmeta">2 personas</span></div><div class="nbody"><div class="mtag">👤 Isaac Boqué</div><div class="mtag">👤 Berta Solé</div></div></div>
+</div>
+<div class="gresumen"><h3>Resumen — todos hacen 1 guardia</h3>
+<div class="rgrid">
+  <div class="rcard"><span class="rname">Paula Jiménez</span><span class="rbadge">Dom</span></div>
+  <div class="rcard"><span class="rname">Luis Medina</span><span class="rbadge">Dom</span></div>
+  <div class="rcard"><span class="rname">Emma Cardona</span><span class="rbadge">Dom</span></div>
+  <div class="rcard"><span class="rname">Biel Gay</span><span class="rbadge">Lun</span></div>
+  <div class="rcard"><span class="rname">Helena</span><span class="rbadge">Lun</span></div>
+  <div class="rcard"><span class="rname">Bet</span><span class="rbadge">Lun</span></div>
+  <div class="rcard"><span class="rname">Laura Latorre</span><span class="rbadge">Mar</span></div>
+  <div class="rcard"><span class="rname">Marcel Bravo</span><span class="rbadge">Mar</span></div>
+  <div class="rcard"><span class="rname">Víctor Sánchez</span><span class="rbadge">Mié</span></div>
+  <div class="rcard"><span class="rname">Víctor Ramos</span><span class="rbadge">Mié</span></div>
+  <div class="rcard"><span class="rname">Hugo</span><span class="rbadge">Jue</span></div>
+  <div class="rcard"><span class="rname">Sandra García</span><span class="rbadge">Jue</span></div>
+  <div class="rcard"><span class="rname">Isaac Boqué</span><span class="rbadge">Vie</span></div>
+  <div class="rcard"><span class="rname">Berta Solé</span><span class="rbadge">Vie</span></div>
+</div></div>
+</div><div class="sub-panel" id="ic-gm">
+  <div class="gm-section">
+    <div class="gm-title gm-al">⚽ Alevín masculino</div>
+    <div class="gm-grid">
+      <div class="gm-card gm-card-al"><span class="gm-group">Aleví Masc 1</span><span class="gm-arrow">→</span><span class="gm-monitor">Paula</span></div>
+      <div class="gm-card gm-card-al"><span class="gm-group">Aleví Masc 2</span><span class="gm-arrow">→</span><span class="gm-monitor">Víctor S</span></div>
+      <div class="gm-card gm-card-al"><span class="gm-group">Aleví Masc 3</span><span class="gm-arrow">→</span><span class="gm-monitor">Berta</span></div>
+      <div class="gm-card gm-card-al"><span class="gm-group">Aleví Masc 4</span><span class="gm-arrow">→</span><span class="gm-monitor">Luis</span></div>
+    </div>
+  </div>
+  <div class="gm-section">
+    <div class="gm-title gm-in">⚽ Infantil masculino</div>
+    <div class="gm-grid">
+      <div class="gm-card gm-card-in"><span class="gm-group">Infantil Masc 1</span><span class="gm-arrow">→</span><span class="gm-monitor">Marcel</span></div>
+      <div class="gm-card gm-card-in"><span class="gm-group">Infantil Masc 2</span><span class="gm-arrow">→</span><span class="gm-monitor">Biel</span></div>
+      <div class="gm-card gm-card-in"><span class="gm-group">Infantil Masc 3</span><span class="gm-arrow">→</span><span class="gm-monitor">Laura</span></div>
+      <div class="gm-card gm-card-in"><span class="gm-group">Infantil Masc 4</span><span class="gm-arrow">→</span><span class="gm-monitor">Víctor R</span></div>
+    </div>
+  </div>
+  <div class="gm-section">
+    <div class="gm-title gm-fe">⚽ Femenino</div>
+    <div class="gm-grid">
+      <div class="gm-card gm-card-fe"><span class="gm-group">Aleví Fem 1</span><span class="gm-arrow">→</span><span class="gm-monitor">Helena</span></div>
+      <div class="gm-card gm-card-fe"><span class="gm-group">Infantil Fem 1</span><span class="gm-arrow">→</span><span class="gm-monitor">Hugo</span></div>
+      <div class="gm-card gm-card-fe"><span class="gm-group">Infantil Fem 2</span><span class="gm-arrow">→</span><span class="gm-monitor">Sandra</span></div>
+      <div class="gm-card gm-card-fe"><span class="gm-group">Cadet Fem 1</span><span class="gm-arrow">→</span><span class="gm-monitor">Isaac</span></div>
+    </div>
+  </div>
+</div><div class="sub-panel" id="ic-gl"><div class="gl-filters" id="gl-filters"></div><div class="gl-grid" id="gl-grid"></div></div><div class="sub-panel" id="ic-hm" style="padding:14px"><div style="font-size:15px;font-weight:700;color:#2C3E50;margin-bottom:14px">🛏️ Habitacions Monitors</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Laia</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 001</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Cristian</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 003</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Helena</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 007</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Molina</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 009</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Hugo</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 011</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Chus</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 019</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Isaac</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 021</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Cardona</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 023</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Berta</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 024</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Latorre</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 025</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Biel</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 026</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Luis</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 107</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Marcel</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 111</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Paula</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 121</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Bet</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 123</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Sandra</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 125</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Víctor Ramos</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 127</span></div>
+<div style="background:#EBF5FB;border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#2C3E50">Víctor Sánchez</span><span style="font-size:12px;color:#1565C0;font-weight:600">HAB 128</span></div>
+</div></div></div>
+<div class="mpanel" id="mp-gc"><div class="sub-tabs"><button class="sub-tab active" onclick="sS('gc','al',this)">⚽ Alevín</button><button class="sub-tab" onclick="sS('gc','in',this)">⚽ Infantil</button><button class="sub-tab" onclick="sS('gc','fe',this)">⚽ Femení</button></div><div class="sub-panel active" id="gc-al">
+<div class="dtabs"><button class="dt active" onclick="sGD('al','dom',this)">Domingo</button><button class="dt" onclick="sGD('al','lun',this)">Lunes</button><button class="dt" onclick="sGD('al','mar',this)">Martes</button><button class="dt" onclick="sGD('al','mie',this)">Miércoles</button><button class="dt" onclick="sGD('al','jue',this)">Jueves</button><button class="dt" onclick="sGD('al','vie',this)">Viernes</button><button class="dt" onclick="sGD('al','sab',this)">Sábado</button></div>
+<div id="alev-cont"></div>
+</div><div class="sub-panel" id="gc-in">
+<div class="dtabs"><button class="dt active" onclick="sGD('in','dom',this)">Domingo</button><button class="dt" onclick="sGD('in','lun',this)">Lunes</button><button class="dt" onclick="sGD('in','mar',this)">Martes</button><button class="dt" onclick="sGD('in','mie',this)">Miércoles</button><button class="dt" onclick="sGD('in','jue',this)">Jueves</button><button class="dt" onclick="sGD('in','vie',this)">Viernes</button><button class="dt" onclick="sGD('in','sab',this)">Sábado</button></div>
+<div id="inf-cont"></div>
+</div><div class="sub-panel" id="gc-fe">
+<div class="dtabs"><button class="dt active" onclick="sGD('fe','dom',this)">Domingo</button><button class="dt" onclick="sGD('fe','lun',this)">Lunes</button><button class="dt" onclick="sGD('fe','mar',this)">Martes</button><button class="dt" onclick="sGD('fe','mie',this)">Miércoles</button><button class="dt" onclick="sGD('fe','jue',this)">Jueves</button><button class="dt" onclick="sGD('fe','vie',this)">Viernes</button><button class="dt" onclick="sGD('fe','sab',this)">Sábado</button></div>
+<div id="fem-cont"></div>
+</div></div>
+<div class="mpanel" id="mp-tr"><div class="sub-tabs"><button class="sub-tab active" onclick="sS('tr','ru',this)">🚌 Rutes</button><button class="sub-tab" onclick="sS('tr','bi',this)">📊 Intern</button></div>
+<div class="sub-panel active" id="tr-ru">
+<div style="display:flex;gap:4px;margin-bottom:12px;background:#EEE;border-radius:10px;padding:4px">
+<button style="flex:1;padding:8px;font-size:11px;font-weight:600;border-radius:8px;border:none;background:#fff;color:#2C3E50;box-shadow:0 1px 3px rgba(0,0,0,.15);cursor:pointer" id="btn-anada" onclick="ruTab('anada',this)">🚌 Anada 12/07</button>
+<button style="flex:1;padding:8px;font-size:11px;font-weight:600;border-radius:8px;border:none;background:transparent;color:#666;cursor:pointer" id="btn-tornada" onclick="ruTab('tornada',this)">🏠 Tornada 18/07</button>
+</div>
+<div id="ru-anada">
+<div id="ru-anada-cont"></div>
+</div>
+<div id="ru-tornada" style="display:none">
+<div id="ru-tornada-cont"></div>
+<p style="font-size:11px;color:#888;font-style:italic">(*) Mateixos punts que l'anada.</p>
+</div>
+</div>
+<div class="sub-panel" id="tr-bi" style="overflow-x:auto">
+<p style="font-size:11px;color:#888;font-style:italic;margin-bottom:10px">Esquerra=Bolvir · Dreta=Bellver · Inclou jugadors + monitors</p>
+<table style="width:100%;border-collapse:collapse;font-size:10px;min-width:580px">
+<tr><th style="background:#2C3E50;color:#fff;padding:5px;border:.5px solid rgba(255,255,255,.3)" rowspan="2">Dia</th><th style="background:#2C3E50;color:#fff;padding:5px;border:.5px solid rgba(255,255,255,.3)" rowspan="2">Cat.</th><th style="background:#1565C0;color:#fff;padding:5px;border:.5px solid rgba(255,255,255,.3)" colspan="5">BUS BOLVIR</th><th style="background:#1B5E20;color:#fff;padding:5px;border:.5px solid rgba(255,255,255,.3)" colspan="5">BUS BELLVER</th></tr>
+<tr><th style="background:#1E6CB3;color:#fff;padding:4px;font-size:9px">Anada M</th><th style="background:#1E6CB3;color:#fff;padding:4px;font-size:9px">Torn. M</th><th style="background:#1E6CB3;color:#fff;padding:4px;font-size:9px">Anada T</th><th style="background:#1E6CB3;color:#fff;padding:4px;font-size:9px">Torn. T</th><th style="background:#1E6CB3;color:#fff;padding:4px;font-size:9px">Pers</th><th style="background:#1A7A30;color:#fff;padding:4px;font-size:9px">Anada M</th><th style="background:#1A7A30;color:#fff;padding:4px;font-size:9px">Torn. M</th><th style="background:#1A7A30;color:#fff;padding:4px;font-size:9px">Anada T</th><th style="background:#1A7A30;color:#fff;padding:4px;font-size:9px">Torn. T</th><th style="background:#1A7A30;color:#fff;padding:4px;font-size:9px">Pers</th></tr>
+<tr style="background:#FFF0E8"><td style="padding:5px;font-weight:600;font-size:10px">Dg 12/07</td><td style="padding:5px;font-size:9px;font-style:italic">Fem/—</td><td style="padding:5px;text-align:center">15:00</td><td style="padding:5px;text-align:center">—</td><td style="padding:5px;text-align:center">—</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">64</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td></tr>
+<tr style="background:#fff"><td style="padding:5px;font-weight:600;font-size:10px">Dl 13/07</td><td style="padding:5px;font-size:9px;font-style:italic">Al/Inf</td><td style="padding:5px;text-align:center">08:45</td><td style="padding:5px;text-align:center">12:10</td><td style="padding:5px;text-align:center">15:15</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">58</td><td style="padding:5px;text-align:center">09:15</td><td style="padding:5px;text-align:center">12:40</td><td style="padding:5px;text-align:center">15:45</td><td style="padding:5px;text-align:center">19:05</td><td style="padding:5px;text-align:center;font-weight:700;color:#1B5E20">68</td></tr>
+<tr style="background:#EBF5FB"><td style="padding:5px;font-weight:600;font-size:10px">Dm 14/07</td><td style="padding:5px;font-size:9px;font-style:italic">Inf/Fem</td><td style="padding:5px;text-align:center">08:45</td><td style="padding:5px;text-align:center">12:10</td><td style="padding:5px;text-align:center">15:15</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">68</td><td style="padding:5px;text-align:center">09:15</td><td style="padding:5px;text-align:center">12:40</td><td style="padding:5px;text-align:center">15:45</td><td style="padding:5px;text-align:center">19:05</td><td style="padding:5px;text-align:center;font-weight:700;color:#1B5E20">64</td></tr>
+<tr style="background:#fff"><td style="padding:5px;font-weight:600;font-size:10px">Dc 15/07</td><td style="padding:5px;font-size:9px;font-style:italic">Fem/Al</td><td style="padding:5px;text-align:center">08:45</td><td style="padding:5px;text-align:center">12:10</td><td style="padding:5px;text-align:center">15:15</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">64</td><td style="padding:5px;text-align:center">09:15</td><td style="padding:5px;text-align:center">12:40</td><td style="padding:5px;text-align:center">15:45</td><td style="padding:5px;text-align:center">19:05</td><td style="padding:5px;text-align:center;font-weight:700;color:#1B5E20">58</td></tr>
+<tr style="background:#EBF5FB"><td style="padding:5px;font-weight:600;font-size:10px">Dj 16/07</td><td style="padding:5px;font-size:9px;font-style:italic">Al/Inf</td><td style="padding:5px;text-align:center">08:45</td><td style="padding:5px;text-align:center">12:10</td><td style="padding:5px;text-align:center">15:15</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">58</td><td style="padding:5px;text-align:center">09:15</td><td style="padding:5px;text-align:center">12:40</td><td style="padding:5px;text-align:center">15:45</td><td style="padding:5px;text-align:center">19:05</td><td style="padding:5px;text-align:center;font-weight:700;color:#1B5E20">68</td></tr>
+<tr style="background:#fff"><td style="padding:5px;font-weight:600;font-size:10px">Dv 17/07</td><td style="padding:5px;font-size:9px;font-style:italic">Inf/Fem</td><td style="padding:5px;text-align:center">08:45</td><td style="padding:5px;text-align:center">12:10</td><td style="padding:5px;text-align:center">15:15</td><td style="padding:5px;text-align:center">18:30</td><td style="padding:5px;text-align:center;font-weight:700;color:#1565C0">68</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td><td style="padding:5px;text-align:center;color:#aaa">—</td></tr>
+</table>
+</div>
+</div>
+<div class="mpanel" id="mp-bs">
+<div class="sub-tabs"><button class="sub-tab active" onclick="sS('bs','bq',this)">🔍 Buscar grup</button><button class="sub-tab" onclick="sS('bs','nu',this);nuInit()">🔢 Llista Nums</button></div>
+<div class="sub-panel active" id="bs-bq">
+<span class="blabel">Escribe el nombre del grupo o del monitor para ver su horario completo</span>
+<input class="binput" type="text" id="bsearch" placeholder="Ej: A1, Paula, Inf Masc 2, Biel, Alevín Fem, Helena..." oninput="bDo(this.value)" autocomplete="off"/>
+<div class="chips">
+  <span class="chip ca" onclick="bSel('A1')">A1·Paula</span><span class="chip ca" onclick="bSel('A2')">A2·Víctor S</span><span class="chip ca" onclick="bSel('A3')">A3·Berta</span><span class="chip ca" onclick="bSel('A4')">A4·Luis</span>
+  <span class="chip ci" onclick="bSel('Inf Masc 1')">IM1·Marcel</span><span class="chip ci" onclick="bSel('Inf Masc 2')">IM2·Biel</span><span class="chip ci" onclick="bSel('Inf Masc 3')">IM3·Laura</span><span class="chip ci" onclick="bSel('Inf Masc 4')">IM4·Víctor R</span>
+  <span class="chip cfx" onclick="bSel('Alevín Fem')">Alevín Fem·Helena</span><span class="chip cfx" onclick="bSel('Inf.Fem 1')">Inf.Fem 1·Hugo</span><span class="chip cfx" onclick="bSel('Inf.Fem 2')">Inf.Fem 2·Sandra</span><span class="chip cfx" onclick="bSel('Cadet Fem')">Cadet Fem·Isaac</span>
+</div>
+<div class="bres" id="bres"><div class="nores">Selecciona un grupo o escribe su nombre arriba</div></div>
+</div>
+<div class="sub-panel" id="bs-nu" style="padding:0">
+  <div style="padding:10px 14px 6px">
+    <input type="text" id="nu-search" placeholder="Escriu un número o un nom..." oninput="nuSearch(this.value)" autocomplete="off" style="width:100%;padding:10px 13px;border-radius:10px;border:1px solid #ccc;font-size:14px;box-sizing:border-box"/>
+  </div>
+  <div id="nu-list" style="padding:0 14px 14px"></div>
+</div>
+
+<!-- GUARDIAS -->
+
+
+<!-- GRUPOS Y MONITORES -->
+
+
+<!-- LLISTA DE GRUPS -->
+
+
+</div>
+
+<div class="mpanel" id="mp-it">
+<div style="margin-bottom:16px">
+  <div style="font-size:18px;font-weight:700;color:#C0392B;margin-bottom:4px">⚠️ Intoleràncies i Al·lèrgies <span style="background:#C0392B;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:8px">18</span></div>
+  <div style="font-size:12px;color:#888">Informació confidencial · Ús intern del staff</div>
+</div>
+<div style="background:#FEF9E7;border:.5px solid #F9A825;border-radius:8px;padding:10px 14px;font-size:12px;color:#5A4200;margin-bottom:16px;line-height:1.7">
+  <strong>IMPORTANT:</strong> Cada monitor és responsable de les intoleràncies del seu grup.<br>
+  <strong>MENJADOR:</strong> Els jugadors amb intoleràncies entren PRIMER.<br>
+  <strong>CELÍACS:</strong> Marc Ramon (AM1·Paula) · Biel Brull (AM2·Víctor S) · Carles Humet (IM3·Laura) · Èlia Tribó (CF1·Isaac)
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px" id="it-filters">
+  <button style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:.5px solid transparent;background:#C0392B;color:#fff" onclick="itFilt('all',this)">Tots (18)</button>
+  <button style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:.5px solid #ccc;background:transparent;color:#666" onclick="itFilt('alm',this)">Alevín masc. (7)</button>
+  <button style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:.5px solid #ccc;background:transparent;color:#666" onclick="itFilt('inm',this)">Infantil masc. (6)</button>
+  <button style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:.5px solid #ccc;background:transparent;color:#666" onclick="itFilt('fem',this)">Femení (5)</button>
+</div>
+<div id="it-grid">
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Marc Ramon Coll</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Paula</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">CELIAC - No pot menjar gluten</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 1 · Alevín masc.</span></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Joan Solsona Sánchez</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Berta</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia proteïna llet de vaca (en procés ITO)</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 3 · Alevín masc.</span></div></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Marçal Maurell Ruiz</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Berta</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Intolerància a les llenties</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 3 · Alevín masc.</span></div></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Oriol Olivart Mingote</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Berta</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Asma al·lèrgica esporàdica - porta inhalador</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 3 · Alevín masc.</span></div></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Biel Brull Torra</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Víctor S</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">CELIAC - No pot menjar gluten</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 2 · Alevín masc.</span></div></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Roger Blanco Pellicer</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Luis</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia ambiental a la primavera</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 4 · Alevín masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Adrià Martell Leyva</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Laura</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Malaltia de Von Willebrand - informar metge en cas de tall</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 3 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Kailash Urosa Jovani</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Biel</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Malaltia severa als peus - vigilar molt</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 2 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Hugo Gómez Terrón</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Biel</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Taps per la oïda - evitar entrada d'aigua (piscina)</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 2 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Xavi Pampols Teixido</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Laura</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia al jengibre</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 3 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Carles Humet Garolera</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Laura</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">CELIAC - Dieta sense gluten</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 3 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="inm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Oriol Sancho Terren</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Víctor R</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia àcars + bronquitis + necessita ventolin</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#9B6ED4;color:#fff">Infantil Masc 4 · Infantil masc.</span></div></div>
+  <div class="it-card" data-cat="fem" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Èlia Tribó Valls</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Isaac</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">CELIACA - Dieta sense gluten</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F07030;color:#fff">Cadet Fem 1 · Femení</span></div></div>
+  <div class="it-card" data-cat="fem" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Vega Pérez Mesa</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Sandra</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Intolerància a la tonyina en conserva</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F07030;color:#fff">Infantil Fem 2 · Femení</span></div></div>
+  <div class="it-card" data-cat="fem" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Mar Cocina Fernandez</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Helena</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia ou cru, llenties, llet sense lactosa</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F07030;color:#fff">Aleví Fem 1 · Femení</span></div></div>
+  <div class="it-card" data-cat="fem" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Queralt Font Tortras</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Helena</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Llet i iogurt sense lactosa</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F07030;color:#fff">Aleví Fem 1 · Femení</span></div></div>
+
+  <div class="it-card" data-cat="fem" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Chloe Berdie Fernandez</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Isaac</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Al·lèrgia a nous i fruits secs</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Cadet Fem 1 · Femení</span></div></div>
+  <div class="it-card" data-cat="alm" style="border-radius:10px;overflow:hidden;border:.5px solid #F5C6C6;background:#FEF0F0;margin-bottom:8px"><div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#C0392B"><span style="font-size:14px;font-weight:700;color:#fff">⚠️ Òscar Clos Riera</span><span style="font-size:11px;color:rgba(255,255,255,.9)">Monitor: Luis</span></div><div style="padding:10px 14px"><div style="font-size:13px;color:#7B241C;font-weight:500">Eviti cítrics i pinya; moderar xocolata, productes làctics, embotits, fruita seca i brioixeria industrial</div><span style="display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:6px;background:#F5C800;color:#5A4200">Aleví Masc 4 · Alevín masc.</span></div></div></div>
+</div>
+</div>
+<div class="mpanel" id="mp-fo">
+<div style="font-size:18px;font-weight:700;color:#1A6B3C;margin-bottom:4px">
+📸 Fotos i Vídeos</div>
+<div style="font-size:12px;color:#888;margin-bottom:12px">Cada monitor puja les fotos del seu grup</div>
+<div style="background:#E8F5E9;border:.5px solid #81C784;border-radius:8px;padding:10px 14px;font-size:12px;color:#1B5E20;margin-bottom:16px;line-height:1.7">
+  📌 <strong>Monitors:</strong> Feu clic a la vostra carpeta i pugeu les fotos des del mòbil.<br>
+  🔒 <strong>Pares:</strong> Les fotos es revisaran abans de compartir-les.
+</div>
+<div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">⚽ Alevín masculino</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:16px">
+  <a href="https://drive.google.com/drive/folders/1DuWlrI2WFOgYEp2fNyiLV2sF77Sd86h5" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#B09000;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Paula</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Aleví Masc 1</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1j_CFH1IkN4cS_I2nzmpXWAnlsrrxmnCH" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#B09000;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Víctor S</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Aleví Masc 2</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1SeSzqpssM6cL_sn5LaSP9GquofMWJFgC" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#B09000;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Berta</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Aleví Masc 3</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1ocetiUzeyHa-5J6-t_Ork2N0xuZZJd1Z" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#B09000;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Luis</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Aleví Masc 4</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+</div>
+<div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">⚽ Infantil masculino</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:16px">
+  <a href="https://drive.google.com/drive/folders/1QTxr_wAEhNnetXDlOJtG7yd3pGnbBuI-" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#6B3FB0;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Marcel</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Masc 1</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1ff6Nq-2v9wsqVed2W2UCmkj1J1wOjnQw" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#6B3FB0;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Biel</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Masc 2</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1eJKd2kqk6Gk9BQo_4Sr-LnwXEYwVo51p" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#6B3FB0;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Laura</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Masc 3</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1u_yAwD4ZXjvwRD_AVN30SJqWtsyWgpln" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#6B3FB0;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Víctor R</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Masc 4</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+</div>
+<div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">⚽ Femenino</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px">
+  <a href="https://drive.google.com/drive/folders/1WXOtRd35pUSOE7WmHRxZOi9LsI_Y6RLy" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#C9560D;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Helena</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Aleví Fem 1</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1G5PZ2rwsPFf4sWHQDVIniy0t9uF122HG" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#C9560D;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Hugo</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Fem 1</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/1AavRs-NKaabbOsjTUJU9ZZtXrhpvXOrt" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#C9560D;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Sandra</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Infantil Fem 2</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+  <a href="https://drive.google.com/drive/folders/11wgD7Haskw9UOJpy2Ge6jFtJmzvdllHE" target="_blank" style="text-decoration:none;display:block;border-radius:10px;overflow:hidden;border:.5px solid #e0e0e0"><div style="padding:12px 14px;background:#C9560D;display:flex;align-items:center;gap:10px"><span style="font-size:24px">📁</span><div><div style="font-size:14px;font-weight:700;color:#fff">Isaac</div><div style="font-size:11px;color:rgba(255,255,255,.85)">Cadet Fem 1</div></div></div><div style="padding:10px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:#1A6B3C">Obrir carpeta Google Drive</span><span style="color:#ccc">→</span></div></a>
+</div>
+</div>
+<div class="mpanel" id="mp-pu" style="padding-bottom:60px">
+<div class="pu-wrap" style="max-width:520px;margin:0 auto">
+  <div style="display:flex;gap:4px;margin-bottom:16px;background:#EEE;border-radius:10px;padding:4px">
+    <button style="flex:1;padding:9px 6px;font-size:12px;font-weight:600;border-radius:8px;border:none;background:#fff;color:#2C3E50;box-shadow:0 1px 3px rgba(0,0,0,.15);cursor:pointer" id="pu-tab-puntuar" onclick="sPuTab2('puntuar',this)">⭐ Puntuar</button>
+    <button style="flex:1;padding:9px 6px;font-size:12px;font-weight:600;border-radius:8px;border:none;background:transparent;color:#666;cursor:pointer" id="pu-tab-ranking" onclick="sPuTab2('ranking',this)">🏆 Ranking</button>
+  </div>
+  <div id="pu2-puntuar">
+    <span style="font-size:12px;color:#666;margin-bottom:6px;display:block;font-weight:500">Grup del jugador</span>
+    <select style="width:100%;font-size:14px;padding:11px 13px;border-radius:10px;border:1px solid #ccc;margin-bottom:14px;background:#fff" id="pu2-grup" onchange="pu2LoadJugadors()"></select>
+    <span style="font-size:12px;color:#666;margin-bottom:6px;display:block;font-weight:500">Jugador</span>
+    <select style="width:100%;font-size:14px;padding:11px 13px;border-radius:10px;border:1px solid #ccc;margin-bottom:14px;background:#fff" id="pu2-jugador"></select>
+    <div style="font-size:12px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee">⭐ Punts positius</div>
+    <div id="pu2-pos-cards"></div>
+    <div style="font-size:12px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee">➖ Punts negatius</div>
+    <div id="pu2-neg-cards"></div>
+    <span style="font-size:12px;color:#666;margin-bottom:6px;display:block;font-weight:500;margin-top:4px">El teu nom (monitor)</span>
+    <select style="width:100%;font-size:14px;padding:11px 13px;border-radius:10px;border:1px solid #ccc;margin-bottom:14px;background:#fff" id="pu2-monitor"><option value="">— Selecciona el teu nom —</option><option>Barrero</option><option>Berta</option><option>Bet</option><option>Biel</option><option>Chus Esteban</option><option>Cristian Sol&iacute;s</option><option>Emma</option><option>Helena</option><option>Hugo</option><option>Isaac</option><option>Laia</option><option>Laura</option><option>Luis</option><option>Marcel</option><option>Paula</option><option>Sandra</option><option>V&iacute;ctor R</option><option>V&iacute;ctor S</option></select>
+    <button class="pu-save-btn2" onclick="pu2Guardar()" style="width:100%;padding:14px;font-size:15px;font-weight:700;color:#fff;background:#2C6B3F;border:none;border-radius:12px;cursor:pointer">💾 Guardar puntuació</button>
+  </div>
+  <div id="pu2-ranking" style="display:none">
+    <div style="display:flex;gap:4px;margin-bottom:14px;background:#EEE;border-radius:10px;padding:4px">
+      <button style="flex:1;padding:8px;font-size:12px;font-weight:600;border-radius:8px;border:none;background:#fff;color:#2C3E50;box-shadow:0 1px 3px rgba(0,0,0,.15);cursor:pointer" onclick="pu2RankMode('general',this)">🌍 General</button>
+      <button style="flex:1;padding:8px;font-size:12px;font-weight:600;border-radius:8px;border:none;background:transparent;color:#666;cursor:pointer" onclick="pu2RankMode('grups',this)">👥 Per grups</button>
+    </div>
+    <div id="pu2-rk-cont"><div style="text-align:center;padding:40px 0;color:#aaa;font-size:13px">Carregant...</div></div>
+
+  </div>
+</div>
+</div>
+<div class="mpanel" id="mp-tg" style="padding-bottom:60px;min-height:200px">
+  <div style="padding:14px">
+    <div style="background:#FEF6E0;border:1px solid #F0D896;border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:#6B5200;line-height:1.5">
+      🟡 Recompte de targetes grogues de tota la setmana. Amb <b>2 o més targetes</b>, cal trucar a casa del jugador/a.
+    </div>
+    <button onclick="tgRender()" style="width:100%;padding:10px;font-size:12px;font-weight:600;color:#2C6B3F;background:#EAF6EE;border:1px solid #BEE4C9;border-radius:10px;cursor:pointer;margin-bottom:14px">🔄 Actualitzar recompte</button>
+    <div id="tg-cont"><div style="text-align:center;padding:40px 0;color:#aaa;font-size:13px">Carregant...</div></div>
+  </div>
+</div>
+
+<script>
+// ============ TARGETES GROGUES ============
+function tgExtractCount(detall) {
+  // detall ejemplo: "🟡Targeta groga:2x(-3) | 🚫Falta de respecte:1x(-5)"
+  if(!detall) return 0;
+  var m = detall.match(/Targeta groga:(\d+)x/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+function tgCheckJugador(jugador, grup) {
+  // Consulta Airtable filtrant pel jugador per sumar el total real de targetes
+  var filterFormula = encodeURIComponent("{jugador}='" + jugador.replace(/'/g, "\\'") + "'");
+  var url = AT_URL + '?pageSize=100&filterByFormula=' + filterFormula;
+  fetch(url, { headers: { 'Authorization': 'Bearer ' + AT_TOKEN } })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var recs = data.records || [];
+    var total = 0;
+    recs.forEach(function(r){ total += tgExtractCount(r.fields.detall); });
+    if(total >= 2) {
+      tgShowAlert(jugador, grup, total);
+    }
+  })
+  .catch(function(e){ /* si falla la comprobació, no bloquegem el flux normal */ });
+}
+
+function tgShowAlert(jugador, grup, total) {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px';
+  overlay.innerHTML =
+    '<div style="background:#fff;border-radius:18px;padding:26px 22px;max-width:340px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.3)">' +
+    '<div style="font-size:42px;margin-bottom:10px">🚨</div>' +
+    '<div style="font-size:17px;font-weight:700;color:#C0392B;margin-bottom:6px">Cal trucar a casa</div>' +
+    '<div style="font-size:14px;color:#2C3E50;margin-bottom:4px"><b>' + jugador + '</b></div>' +
+    '<div style="font-size:12px;color:#888;margin-bottom:16px">' + grup + ' &middot; ' + total + ' targetes grogues aquesta setmana</div>' +
+    '<button onclick="this.parentElement.parentElement.remove()" style="width:100%;padding:12px;font-size:14px;font-weight:700;color:#fff;background:#C0392B;border:none;border-radius:12px;cursor:pointer">Entesos</button>' +
+    '</div>';
+  document.body.appendChild(overlay);
+}
+
+function tgRender() {
+  var cont = document.getElementById('tg-cont');
+  if(!cont) return;
+  cont.innerHTML = '<div style="text-align:center;padding:40px 0;color:#aaa;font-size:13px">Carregant...</div>';
+
+  function fetchAll(offset, acc) {
+    var url = AT_URL + '?pageSize=100' + (offset ? '&offset=' + offset : '');
+    fetch(url, { headers: { 'Authorization': 'Bearer ' + AT_TOKEN } })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data.error) {
+        cont.innerHTML = '<div style="text-align:center;padding:20px;color:#C0392B;font-size:13px">Error Airtable: ' + (data.error.message || JSON.stringify(data.error)) + '</div>';
+        return;
+      }
+      var recs = data.records || [];
+      recs.forEach(function(r){ acc.push(r.fields); });
+      if(data.offset) {
+        fetchAll(data.offset, acc);
+      } else {
+        tgProcess(acc);
+      }
+    })
+    .catch(function(e){
+      cont.innerHTML = '<div style="text-align:center;padding:20px;color:#C0392B;font-size:13px">Error carregant dades: ' + e.message + '</div>';
+    });
+  }
+  fetchAll(null, []);
+}
+
+function tgProcess(entries) {
+  var cont = document.getElementById('tg-cont');
+  if(!cont) return;
+
+  var agg = {};
+  entries.forEach(function(e){
+    var n = tgExtractCount(e.detall);
+    if(n <= 0) return;
+    if(!agg[e.jugador]) agg[e.jugador] = {count:0, grup:e.grup};
+    agg[e.jugador].count += n;
+  });
+
+  var list = Object.keys(agg).map(function(name){
+    return {name:name, count:agg[name].count, grup:agg[name].grup};
+  });
+  list.sort(function(a,b){ return b.count - a.count; });
+
+  if(list.length === 0){
+    var totalRegistres = entries.length;
+    cont.innerHTML = '<div style="text-align:center;padding:40px 0;color:#aaa;font-size:13px">Encara no hi ha targetes grogues registrades 🎉<br><span style="font-size:10px;color:#ccc">(' + totalRegistres + ' registres revisats)</span></div>';
+    return;
+  }
+
+  var html = '';
+  list.forEach(function(it){
+    var alert = it.count >= 2;
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;margin-bottom:8px;background:'+(alert?'#FEEAEA':'#FEF9EC')+';border:1px solid '+(alert?'#F0B0B0':'#F0E0A0')+'">';
+    html += '<div style="font-size:20px">'+(alert?'🚨':'🟡')+'</div>';
+    html += '<div style="flex:1"><div style="font-size:14px;font-weight:600;color:#2C3E50">'+it.name+'</div>';
+    html += '<div style="font-size:11px;color:#888">'+it.grup+'</div></div>';
+    html += '<div style="text-align:right"><div style="font-size:18px;font-weight:700;color:'+(alert?'#C0392B':'#B07800')+'">'+it.count+'</div>';
+    html += '<div style="font-size:9px;color:#999">targeta'+(it.count!==1?'es':'')+'</div></div>';
+    html += '</div>';
+    if(alert){
+      html += '<div style="margin:-4px 0 10px 0;padding:6px 14px;font-size:11px;font-weight:600;color:#C0392B">📞 Cal trucar a casa</div>';
+    }
+  });
+  cont.innerHTML = html;
+}
+</script>
+
+<div id="toast2" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#2C6B3F;color:#fff;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999"></div>
+</div>
+<script>
+// ============ DATOS ============
+var MON={'A1':'Paula','A2':'Victor S','A3':'Berta','A4':'Luis','Inf Masc 1':'Marcel','Inf Masc 2':'Biel','Inf Masc 3':'Laura','Inf Masc 4':'Victor R','Alev\u00edn Fem':'Helena','Inf.Fem 1':'Hugo','Inf.Fem 2':'Sandra','Cadet Fem':'Isaac'};
+var MON_INV={'paula':'A1','victor s':'A2','berta':'A3','luis':'A4','marcel':'Inf Masc 1','biel':'Inf Masc 2','laura':'Inf Masc 3','victor r':'Inf Masc 4','helena':'Alev\u00edn Fem','hugo':'Inf.Fem 1','sandra':'Inf.Fem 2','isaac':'Cadet Fem'};
+var MODEL={al:{dom:'M3',lun:'M1',mar:'M2',mie:'M3',jue:'M1',vie:'M2'},in:{dom:'M2',lun:'M3',mar:'M1',mie:'M2',jue:'M3',vie:'M1'},fe:{dom:'M1',lun:'M2',mar:'M3',mie:'M1',jue:'M2',vie:'M3'}};
+var DAYROT={dom:{M1:'fe',M2:'in',M3:'al'},lun:{M1:'al',M2:'fe',M3:'in'},mar:{M1:'in',M2:'al',M3:'fe'},mie:{M1:'fe',M2:'in',M3:'al'},jue:{M1:'al',M2:'fe',M3:'in'},vie:{M1:'in',M2:'al',M3:'fe'}};
+var NOCHES={al:{dom:'Dinmicas+Coreografa',lun:'\uD83E\uDD69 Discoteca+Bingo',mar:'Dinmicas+Coreografa',mie:'Dinmicas+Coreografa',jue:'\uD83E\uDD69 Discoteca+Bingo',vie:'final'},in:{dom:'Kings League noche',lun:'Dinmicas+Coreografa',mar:'\uD83E\uDD69 Discoteca+Bingo',mie:'Kings League noche',jue:'Dinmicas+Coreografa',vie:'final'},fe:{dom:'\uD83E\uDD69 Discoteca+Bingo',lun:'Kings League noche',mar:'Dinmicas+Coreografa',mie:'\uD83E\uDD69 Discoteca+Bingo',jue:'Kings League noche',vie:'final'}};
+var M2={al:{M1:{A1:'Gris',A2:'C\u00e9sped',A3:'Azul',A4:'Piscina'},M2:{A1:'C\u00e9sped',A2:'Gris',A3:'Piscina',A4:'Azul'},T1:{A1:'P.azul',A2:'Piscina',A3:'P.gris',A4:'C\u00e9sped'},T2:{A1:'Piscina',A2:'P.azul',A3:'C\u00e9sped',A4:'P.gris'}},in:{M1:{'Inf Masc 1':'Gris','Inf Masc 2':'C\u00e9sped','Inf Masc 3':'Azul','Inf Masc 4':'Piscina'},M2:{'Inf Masc 1':'C\u00e9sped','Inf Masc 2':'Gris','Inf Masc 3':'Piscina','Inf Masc 4':'Azul'},T1:{'Inf Masc 1':'P.azul','Inf Masc 2':'Piscina','Inf Masc 3':'P.gris','Inf Masc 4':'C\u00e9sped'},T2:{'Inf Masc 1':'Piscina','Inf Masc 2':'P.azul','Inf Masc 3':'C\u00e9sped','Inf Masc 4':'P.gris'}},fe:{M1:{'Alev\u00edn Fem':'Gris','Inf.Fem 1':'C\u00e9sped','Inf.Fem 2':'Azul','Cadet Fem':'Piscina'},M2:{'Alev\u00edn Fem':'C\u00e9sped','Inf.Fem 1':'Gris','Inf.Fem 2':'Piscina','Cadet Fem':'Azul'},T1:{'Alev\u00edn Fem':'P.azul','Inf.Fem 1':'Piscina','Inf.Fem 2':'P.gris','Cadet Fem':'C\u00e9sped'},T2:{'Alev\u00edn Fem':'Piscina','Inf.Fem 1':'P.azul','Inf.Fem 2':'C\u00e9sped','Cadet Fem':'P.gris'}}};
+var M3={al:{T1:{A1:'Bellver',A2:'Voley',A3:'Hinch',A4:'Din+Pisc'},T2:{A1:'Voley',A2:'Bellver',A3:'Din+Pisc',A4:'Hinch'},T1t:{A1:'Hinch',A2:'Din+Pisc',A3:'Bellver',A4:'Voley'},T2t:{A1:'Din+Pisc',A2:'Hinch',A3:'Voley',A4:'Bellver'}},in:{T1:{'Inf Masc 1':'Bellver','Inf Masc 2':'Voley','Inf Masc 3':'Hinch','Inf Masc 4':'Din+Pisc'},T2:{'Inf Masc 1':'Voley','Inf Masc 2':'Bellver','Inf Masc 3':'Din+Pisc','Inf Masc 4':'Hinch'},T1t:{'Inf Masc 1':'Hinch','Inf Masc 2':'Din+Pisc','Inf Masc 3':'Bellver','Inf Masc 4':'Voley'},T2t:{'Inf Masc 1':'Din+Pisc','Inf Masc 2':'Hinch','Inf Masc 3':'Voley','Inf Masc 4':'Bellver'}},fe:{T1:{'Alev\u00edn Fem':'Bellver','Inf.Fem 1':'Voley','Inf.Fem 2':'Hinch','Cadet Fem':'Din+Pisc'},T2:{'Alev\u00edn Fem':'Voley','Inf.Fem 1':'Bellver','Inf.Fem 2':'Din+Pisc','Cadet Fem':'Hinch'},T1t:{'Alev\u00edn Fem':'Hinch','Inf.Fem 1':'Din+Pisc','Inf.Fem 2':'Bellver','Cadet Fem':'Voley'},T2t:{'Alev\u00edn Fem':'Din+Pisc','Inf.Fem 1':'Hinch','Inf.Fem 2':'Voley','Cadet Fem':'Bellver'}}};
+var SG={al:['A1','A2','A3','A4'],in:['Inf Masc 1','Inf Masc 2','Inf Masc 3','Inf Masc 4'],fe:['Alev\u00edn Fem','Inf.Fem 1','Inf.Fem 2','Cadet Fem']};
+var CATNAMES={al:'Alev\u00edn masculino',in:'Infantil masculino',fe:'Femenino'};
+var CATCOL={al:'background:#F5C800;color:#5A4200',in:'background:#9B6ED4;color:#fff',fe:'background:#F07030;color:#fff'};
+var CB={al:'ba',in:'bi',fe:'bf'};
+var DK=['dom','lun','mar','mie','jue','vie','sab'];
+var DL=['Domingo','Lunes','Martes','Mi\u00e9rcoles','Jueves','Viernes','S\u00e1bado'];
+
+// ============ DATOS LLISTA GRUPS ============
+var GRUPS = [
+  {nom:'Alev\u00ed Masc 1', cat:'alm', monitor:'Paula', color:'#C9A800', jugadors:[
+    {p:false,nom:'Álvaro',cog:'González Echenique',any:2014,obs:''},
+    {p:false,nom:'Aleix',cog:'Pannón Joher',any:2014,obs:''},
+    {p:false,nom:'Mario',cog:'Jiménez Romero',any:2014,obs:''},
+    {p:false,nom:'Aleix',cog:'Gil Sisó',any:2014,obs:''},
+    {p:false,nom:'Aleix',cog:'Fernandez Sanglas',any:2014,obs:''},
+    {p:false,nom:'Joel',cog:'Morilla Dalmau',any:2014,obs:''},
+    {p:false,nom:'Biel',cog:'Vallez',any:2014,obs:''},
+    {p:false,nom:'Martí',cog:'Vallez Garcia',any:2014,obs:''},
+    {p:false,nom:'Bruno',cog:'Medina Nieto',any:2014,obs:''},
+    {p:false,nom:'Marc',cog:'Ramon Coll',any:2014,obs:'CELÍAC - No pot menjar gluten'},
+    {p:false,nom:'Iker',cog:'Membrives Vázquez',any:2014,obs:''},
+    {p:false,nom:'Marc',cog:'Galán Teixidó',any:2015,obs:''},
+    {p:false,nom:'Oriol',cog:'Ruiz Meca',any:2015,obs:''}
+  ]},
+  {nom:'Alev\u00ed Masc 2', cat:'alm', monitor:'V\u00edctor S', color:'#C9A800', jugadors:[
+    {p:false,nom:'Lucas',cog:'Compte de Castellarnau',any:2014,obs:''},
+    {p:false,nom:'Biel',cog:'Brull Torra',any:2014,obs:'CELÍAC - No pot menjar gluten'},
+    {p:false,nom:'Guillem',cog:'Cañete Ros',any:2014,obs:''},
+    {p:false,nom:'Nahuel',cog:'Sosa Navas',any:2014,obs:''},
+    {p:false,nom:'Anselm',cog:'Fabregat Joval',any:2014,obs:''},
+    {p:false,nom:'Ïu',cog:'Medina Marca',any:2014,obs:''},
+    {p:false,nom:'Álex',cog:'Luna Martínez',any:2014,obs:''},
+    {p:false,nom:'Leo',cog:'Trabazos Ojeda',any:2014,obs:''},
+    {p:false,nom:'Víctor',cog:'Pérez Pérez',any:2014,obs:''},
+    {p:false,nom:'Ibai',cog:'Garate Font',any:2015,obs:''},
+    {p:false,nom:'Aleix',cog:'Llort Roset',any:2015,obs:''},
+    {p:false,nom:'Pol',cog:'Lozano Salleras',any:2015,obs:''},
+    {p:false,nom:'Joan',cog:'Ferran Giralt',any:2015,obs:''}
+  ]},
+  {nom:'Alev\u00ed Masc 3', cat:'alm', monitor:'Berta', color:'#C9A800', jugadors:[
+    {p:false,nom:'Alex',cog:'Olid Lombardero',any:2014,obs:''},
+    {p:false,nom:'Jan',cog:'Serano',any:2014,obs:''},
+    {p:false,nom:'Erik',cog:'Sánchez Gayete',any:2014,obs:''},
+    {p:false,nom:'Oriol',cog:'Olivart Mingote',any:2014,obs:'Asma al·lèrgica esporàdica - porta inhalador'},
+    {p:false,nom:'Marcel',cog:'Sakr García',any:2014,obs:''},
+    {p:false,nom:'Xavi',cog:'Sanz Rodríguez',any:2014,obs:''},
+    {p:false,nom:'Joan',cog:'Solsona Sánchez',any:2014,obs:'Al·lèrgia proteïna llet de vaca (en procés ITO)'},
+    {p:false,nom:'Marçal',cog:'Maurell Ruiz',any:2014,obs:'Intolerància a les llenties'},
+    {p:false,nom:'Biel',cog:'Perez Garcia',any:2014,obs:''},
+    {p:false,nom:'Marcel',cog:'Fernández Andreu',any:2014,obs:''},
+    {p:false,nom:'Lluc',cog:'Marturis Vila',any:2014,obs:''},
+    {p:false,nom:'Unai',cog:'López Jiménez',any:2014,obs:''},
+    {p:false,nom:'Ramon',cog:'Alfós Herrera',any:2014,obs:''},
+    {p:false,nom:'Nacho',cog:'Rodriguez Iglesias',any:2014,obs:''}
+  ]},
+  {nom:'Alev\u00ed Masc 4', cat:'alm', monitor:'Luis', color:'#C9A800', jugadors:[
+    {p:false,nom:'Pau',cog:'Vidal González',any:2014,obs:''},
+    {p:false,nom:'Sergi',cog:'Garrigo Viade',any:2014,obs:''},
+    {p:false,nom:'Lleó',cog:'Sàbat Ruiz',any:2014,obs:''},
+    {p:false,nom:'Roger',cog:'Blanco Pellicer',any:2014,obs:'Al·lèrgia ambiental a la primavera'},
+    {p:false,nom:'Bruno',cog:'Ramallo Gil',any:2014,obs:''},
+    {p:false,nom:'Lluc',cog:'Alba i Puig',any:2014,obs:''},
+    {p:false,nom:'Aitor',cog:'Valderrama Ruiz',any:2014,obs:''},
+    {p:false,nom:'Iker',cog:'Quirantes Tostado',any:2014,obs:''},
+    {p:false,nom:'Martí',cog:'Irla Palomanes',any:2014,obs:''},
+    {p:false,nom:'Àlex',cog:'Santesmases Garcia',any:2014,obs:''},
+    {p:false,nom:'Leo',cog:'Navarro Garcia',any:2014,obs:''},
+    {p:false,nom:'Francesc',cog:'Rius Font',any:2014,obs:''},
+    {p:false,nom:'Martí',cog:'Martínez Bargalló',any:2014,obs:''},
+    {p:false,nom:'Òscar',cog:'Clos Riera',any:2014,obs:'Eviti cítrics i pinya; moderar xocolata, productes làctics, embotits, fruita seca i brioixeria industrial'}
+  ]},
+  {nom:'Infantil Masc 1', cat:'inm', monitor:'Marcel', color:'#7B4FB5', jugadors:[
+    {p:false,nom:'Albert',cog:'Aycart Calderón',any:2012,obs:''},
+    {p:false,nom:'Xavier',cog:'López López',any:2012,obs:''},
+    {p:false,nom:'Biel',cog:'Rios Sanz',any:2012,obs:''},
+    {p:false,nom:'Iker',cog:'Martinez Patón',any:2012,obs:''},
+    {p:false,nom:'Biel',cog:'Sánchez Gomez',any:2012,obs:''},
+    {p:false,nom:'Alex',cog:'Moreno Agudo',any:2012,obs:''},
+    {p:false,nom:'Mateu',cog:'Julia Hernandez',any:2012,obs:''},
+    {p:false,nom:'Pablo',cog:'Sanchez Martinez',any:2012,obs:''},
+    {p:false,nom:'Emir Isai',cog:'Montoya Lopez',any:2012,obs:''},
+    {p:false,nom:'Dídac',cog:'Belmar Trull',any:2012,obs:''},
+    {p:false,nom:'Leo',cog:'Moreno Sanchez',any:2012,obs:''},
+    {p:false,nom:'Kenzo',cog:'Hayashi Martínez',any:2012,obs:''},
+    {p:false,nom:'David',cog:'Gil Podda',any:2013,obs:''}
+  ,
+    {p:false,nom:'Àlex',cog:'Aguilà Egozcue',any:2012,obs:''}]},
+  {nom:'Infantil Masc 2', cat:'inm', monitor:'Biel', color:'#7B4FB5', jugadors:[
+    {p:false,nom:'Teo',cog:'Santafe Ruiz',any:2012,obs:''},
+    {p:false,nom:'Hugo',cog:'Gómez Terrón',any:2012,obs:'Taps per la oida - evitar entrada daigua (piscina)'},
+    {p:false,nom:'Nil',cog:'Vicente Encuentra',any:2012,obs:''},
+    {p:false,nom:'Jan',cog:'Marco Mateo',any:2012,obs:''},
+    {p:false,nom:'Eloi',cog:'Roman Pañella',any:2012,obs:''},
+    {p:false,nom:'Kailash',cog:'Urosa Jovani',any:2012,obs:'Malaltia severa als peus - vigilar molt'},
+    {p:false,nom:'Marc',cog:'Vila Villahoz',any:2013,obs:''},
+    {p:false,nom:'Samuel',cog:'Iraola Llorente',any:2013,obs:''},
+    {p:false,nom:'Pau',cog:'Estrella Romero',any:2013,obs:''},
+    {p:false,nom:'Joel',cog:'Pacheco Martín',any:2013,obs:''},
+    {p:false,nom:'Roger',cog:'Morell Pàmies',any:2013,obs:''},
+    {p:false,nom:'Josep Miquel',cog:'Gallart Olivero',any:2013,obs:''},
+    {p:false,nom:'Adrià',cog:'Labairu Gracia',any:2013,obs:''}
+  ]},
+  {nom:'Infantil Masc 3', cat:'inm', monitor:'Laura', color:'#7B4FB5', jugadors:[
+    {p:false,nom:'Antonio',cog:'Llinares Gabarron',any:2012,obs:''},
+    {p:false,nom:'Nil',cog:'Saladie Iglesias',any:2012,obs:''},
+    {p:false,nom:'Guillem',cog:'Salvado Beltran',any:2012,obs:''},
+    {p:false,nom:'Adrià',cog:'Martell Leyva',any:2012,obs:'Malaltia de Von Willebrand - informar metge en cas de tall'},
+    {p:false,nom:'Nicolas',cog:'Lao Beltran',any:2012,obs:''},
+    {p:false,nom:'Xavi',cog:'Pampols Teixido',any:2012,obs:'Al·lèrgia al jengibre'},
+    {p:false,nom:'Genís',cog:'Bartolomé Casademunt',any:2012,obs:''},
+    {p:false,nom:'David',cog:'Olivares Román',any:2012,obs:''},
+    {p:false,nom:'Carles',cog:'Humet Garolera',any:2013,obs:'CELÍAC - Dieta sense gluten'},
+    {p:false,nom:'Lucas',cog:'Rodriguez Calzado',any:2013,obs:''},
+    {p:false,nom:'Jan',cog:'Cervelló Andújar',any:2013,obs:''},
+    {p:false,nom:'Unai',cog:'Dominguez Izquierdo',any:2013,obs:''},
+    {p:false,nom:'Alejandro',cog:'López Moral',any:2013,obs:''},
+    {p:false,nom:'Oriol',cog:'Capdevila Balcells',any:2013,obs:''}
+  ]},
+  {nom:'Infantil Masc 4', cat:'inm', monitor:'V\u00edctor R', color:'#7B4FB5', jugadors:[
+    {p:false,nom:'Pau',cog:'Teixidó Alsina',any:2013,obs:''},
+    {p:false,nom:'Oriol',cog:'Sancho Terren',any:2013,obs:'Al·lèrgia àcars + bronquitis + necessita ventolin'},
+    {p:false,nom:'Martí',cog:'Rubió Balañà',any:2013,obs:''},
+    {p:false,nom:'Pau',cog:'del Prado Moya',any:2013,obs:''},
+    {p:false,nom:'Pau',cog:'Monjo Sanchiz',any:2013,obs:''},
+    {p:false,nom:'Biel',cog:'Batuecas Mas',any:2013,obs:''},
+    {p:false,nom:'Aleix',cog:'Guerrero Vila',any:2013,obs:''},
+    {p:false,nom:'Pau',cog:'Ruz Ponce',any:2013,obs:''},
+    {p:false,nom:'Mikel',cog:'Fagundez Justes',any:2013,obs:''},
+    {p:false,nom:'Jose Antonio',cog:'García Jiménez',any:2013,obs:''},
+    {p:false,nom:'Aníbal',cog:'Garriga Caballero',any:2013,obs:''},
+    {p:false,nom:'Oriol',cog:'Ponsico López',any:2013,obs:''},
+    {p:false,nom:'Mirko',cog:'Jankovic Ramos',any:2013,obs:''},
+    {p:false,nom:'Guillem',cog:'Torrell Ayza',any:2013,obs:''},
+    {p:false,nom:'Alvaro',cog:'Barredo Moure',any:2013,obs:''}
+  ]},
+  {nom:'Cadet Fem 1', cat:'caf', monitor:'Isaac', color:'#C9560D', jugadors:[
+    {p:false,nom:'Sabina',cog:'Sicilia Pérez',any:2010,obs:''},
+    {p:false,nom:'Carla',cog:'Rossi Fernández',any:2010,obs:''},
+    {p:false,nom:'Adriana',cog:'Pons Redondo',any:2010,obs:''},
+    {p:false,nom:'Queralt',cog:'Raventós',any:2010,obs:''},
+    {p:false,nom:'Marina',cog:'Balagueró Querol',any:2010,obs:'Vigilar rodilla - torna de creuats'},
+    {p:false,nom:'Àneu',cog:'Isern Fontanet',any:2010,obs:''},
+    {p:false,nom:'Urgell',cog:'Isern Fontanet',any:2010,obs:''},
+    {p:false,nom:'Aran',cog:'Bonillo Puebla',any:2011,obs:''},
+    {p:false,nom:'Ona',cog:'Carrera Pintó',any:2011,obs:''},
+    {p:false,nom:'Maria',cog:'Gonfaus Gomez',any:2011,obs:''},
+    {p:false,nom:'Èlia',cog:'Tribó Valls',any:2011,obs:'CELÍACA - Dieta sense gluten'},
+    {p:false,nom:'Izaro',cog:'Gamazo Barrera',any:2011,obs:''},
+    {p:false,nom:'Duna',cog:'Fernandez Gilabert',any:2011,obs:''},
+    {p:false,nom:'Chloe',cog:'Berdie Fernandez',any:2012,obs:'Al·lèrgia a nous i fruits secs'},
+    {p:false,nom:'Laia',cog:'Verdaguer Fernández',any:2012,obs:''}
+  ]},
+  {nom:'Infantil Fem 1', cat:'inf', monitor:'Hugo', color:'#C9560D', jugadors:[
+    {p:false,nom:'Laia',cog:'Minoves Ferrando',any:2012,obs:''},
+    {p:false,nom:'Anna',cog:'Ripoll Llorens',any:2012,obs:''},
+    {p:false,nom:'Abril',cog:'Granado Lasheras',any:2012,obs:''},
+    {p:false,nom:'Carla',cog:'Mejías Maraver',any:2012,obs:''},
+    {p:false,nom:'Bruna',cog:'Riera Font',any:2012,obs:''},
+    {p:false,nom:'Martina',cog:'Grasas Maturana',any:2012,obs:''},
+    {p:false,nom:'Chloe',cog:'Cea Vidal',any:2013,obs:''},
+    {p:false,nom:'Carla',cog:'Castellà Novell',any:2013,obs:''},
+    {p:false,nom:'Daniella',cog:'Vilet Portugal',any:2013,obs:''},
+    {p:false,nom:'Mar',cog:'Jordan Redondo',any:2013,obs:''},
+    {p:false,nom:'Magalí',cog:'Nadal Aguiló',any:2013,obs:''},
+    {p:false,nom:'Martina',cog:'Seró Canchal',any:2013,obs:''},
+    {p:false,nom:'Noa',cog:'Barranco Escobero',any:2013,obs:''},
+    {p:false,nom:'Zoe',cog:'López Lozano',any:2013,obs:''}
+  ]},
+  {nom:'Infantil Fem 2', cat:'inf', monitor:'Sandra', color:'#C9560D', jugadors:[
+    {p:false,nom:'Niah',cog:'Cano Morcillo',any:2013,obs:''},
+    {p:false,nom:'Aina',cog:'Saavedra Olivero',any:2013,obs:''},
+    {p:false,nom:'Daniela',cog:'Llopart Bautista',any:2013,obs:''},
+    {p:false,nom:'Gal\u00b7la',cog:'Sab\u00e0 Esquerda',any:2013,obs:''},
+    {p:false,nom:'Vega',cog:'P\u00e9rez Mesa',any:2013,obs:'Intoleràcia a la tonyina en conserva'},
+    {p:false,nom:'X\u00e8nia',cog:'Vila Ortiz',any:2013,obs:''},
+    {p:false,nom:'Ona',cog:'Parra Garcia',any:2014,obs:''},
+    {p:false,nom:'Abril',cog:'Jozan Casanovas',any:2014,obs:''},
+    {p:false,nom:'Bernat',cog:'Jim\u00e9nez Lage',any:2014,obs:''},
+    {p:false,nom:'Leire',cog:'Daza Risco',any:2014,obs:''},
+    {p:false,nom:'N\u00faria',cog:'Marcos Figueres',any:2014,obs:''},
+    {p:false,nom:'Queralt',cog:'Sol\u00e9 Roca',any:2014,obs:''},
+    {p:false,nom:'Judith',cog:'Escolar Barata',any:2014,obs:''},
+    {p:false,nom:'Paula',cog:'Anglade Pe\u00f1alver',any:2014,obs:''},
+    {p:false,nom:'Carla',cog:'Anglade Pe\u00f1alver',any:2014,obs:''}
+  ]},
+  {nom:'Alev\u00ed Fem 1', cat:'alf', monitor:'Helena', color:'#C9560D', jugadors:[
+    {p:false,nom:'Lis',cog:'Garcia Corrales',any:2014,obs:''},
+    {p:false,nom:'Valentina L\u00eda',cog:'Sayol Garcia',any:2014,obs:''},
+    {p:false,nom:'Gina',cog:'Bernadas Ginovart',any:2014,obs:''},
+    {p:false,nom:'J\u00falia',cog:'Granado Lasheras',any:2014,obs:''},
+    {p:false,nom:'Dafne',cog:'Mu\u00f1oz',any:2014,obs:''},
+    {p:false,nom:'Mar',cog:'Cocina Fernandez',any:2014,obs:'Al·lèrgia ou cru, llenties, llet sense lactosa'},
+    {p:false,nom:'Mar',cog:'Matamoros Bota',any:2014,obs:''},
+    {p:false,nom:'Aida',cog:'Sebastian Torner',any:2014,obs:'Vigilar rodilla - torna de lateral + rotula'},
+    {p:false,nom:'Berta',cog:'Genov\u00e8s Farr\u00e0s',any:2014,obs:''},
+    {p:false,nom:'Martina',cog:'Fontanet Flores',any:2014,obs:''},
+    {p:false,nom:'J\u00falia',cog:'Gilabert Mitjavila',any:2014,obs:''},
+    {p:false,nom:'Mireia',cog:'Llum\u00e0',any:2014,obs:'Te leucemia'},
+    {p:false,nom:'Maria',cog:'Jim\u00e9nez Lage',any:2014,obs:''},
+    {p:false,nom:'Queralt',cog:'Font Tortras',any:2015,obs:'Llet i iogurt sense lactosa'},
+    {p:false,nom:'Edda',cog:'Garcia Escaler',any:2016,obs:''}
+  ]}
+];
+
+// ============ NAVEGACION ============
+function sM(id,btn){
+  document.querySelectorAll('.mpanel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.mt').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('mp-'+id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='cj'){
+    var activeDt = document.querySelector('#mp-cj .dt.active');
+    var day = activeDt ? activeDt.getAttribute('data-day') || 'dom' : 'dom';
+    setTimeout(function(){ renderCD(day); }, 50);
+    if(!activeDt){ var d=document.querySelector('#mp-cj .dt'); if(d) d.classList.add('active'); }
+  }
+  if(id==='gc'){renderGD('al','dom');renderGD('in','dom');renderGD('fe','dom');}
+  if(id==='ic'){var gl=document.getElementById('ic-gl');if(gl&&gl.classList.contains('active'))renderGL('all');}
+  if(id==='pu'){pu2Init();}
+  if(id==='tg'){tgRender();}
+}
+function sS(parent,sub,btn){
+  document.querySelectorAll('#mp-'+parent+' .sub-tab').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('#mp-'+parent+' .sub-panel').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  document.getElementById(parent+'-'+sub).classList.add('active');
+  if(sub==='gl')renderGL('all');
+}
+function ruTab(id,btn){
+  document.getElementById('ru-anada').style.display=id==='anada'?'block':'none';
+  document.getElementById('ru-tornada').style.display=id==='tornada'?'block':'none';
+  document.getElementById('btn-anada').style.background=id==='anada'?'#fff':'transparent';
+  document.getElementById('btn-anada').style.color=id==='anada'?'#2C3E50':'#666';
+  document.getElementById('btn-anada').style.boxShadow=id==='anada'?'0 1px 3px rgba(0,0,0,.15)':'none';
+  document.getElementById('btn-tornada').style.background=id==='tornada'?'#fff':'transparent';
+  document.getElementById('btn-tornada').style.color=id==='tornada'?'#2C3E50':'#666';
+  document.getElementById('btn-tornada').style.boxShadow=id==='tornada'?'0 1px 3px rgba(0,0,0,.15)':'none';
+}
+function sCD(d,b){document.querySelectorAll('#mp-cj .dt').forEach(function(x){x.classList.remove('active');});b.classList.add('active');renderCD(d);}
+function sGD(g,d,b){document.querySelectorAll('#mp-'+g+' .dt').forEach(function(x){x.classList.remove('active');});b.classList.add('active');renderGD(g,d);}
+
+// ============ LLISTA GRUPS ============
+function renderGL(filtro) {
+  var filtros = [{k:'all',lbl:'Tots'},{k:'alm',lbl:'Alev\u00ed masc.'},{k:'inm',lbl:'Infantil masc.'},{k:'caf',lbl:'Cadet fem.'},{k:'inf',lbl:'Infantil fem.'},{k:'alf',lbl:'Alev\u00ed fem.'}];
+  var fDiv = document.getElementById('gl-filters');
+  var gDiv = document.getElementById('gl-grid');
+  var fHtml = '';
+  for(var fi=0;fi<filtros.length;fi++){
+    var f=filtros[fi];
+    var isAct=(f.k===filtro);
+    var st=isAct?' style="background:#34495E;color:#fff;border-color:transparent"':'';
+    fHtml+='<button class="gl-btn"'+st+' onclick="renderGL(\''+f.k+'\')">'+f.lbl+'</button>';
+  }
+  fDiv.innerHTML=fHtml;
+  var gHtml='';
+  for(var gi=0;gi<GRUPS.length;gi++){
+    var g=GRUPS[gi];
+    if(filtro!=='all' && g.cat!==filtro) continue;
+    var nPort=0; for(var ji=0;ji<g.jugadors.length;ji++){if(g.jugadors[ji].p)nPort++;}
+    var nObs=0; for(var ji=0;ji<g.jugadors.length;ji++){if(g.jugadors[ji].obs)nObs++;}
+    gHtml+='<div class="gl-card">';
+    gHtml+='<div class="gl-head" style="background:'+g.color+'">';
+    gHtml+='<span class="gl-htitle">'+g.nom+'</span>';
+    gHtml+='<span class="gl-hmeta">Monitor: '+g.monitor+' &middot; '+g.jugadors.length+' jug. &middot; '+nPort+' porters</span>';
+    gHtml+='</div>';
+    gHtml+='<table class="gl-table"><tr><th>#</th><th>Nom</th><th>Any</th><th>Pos.</th><th>Obs.</th></tr>';
+    for(var ji=0;ji<g.jugadors.length;ji++){
+      var j=g.jugadors[ji];
+      var cls=j.p?'gl-porter':(j.obs?'gl-intol':'');
+      var posTxt=j.p?'<span class="gl-tag-p">Porter</span>':'<span class="gl-tag-j">Jugador</span>';
+      var obsTxt=j.obs?'<span class="gl-obs">'+j.obs+'</span>':'';
+      var cogTxt=j.cog?j.cog:'';
+      gHtml+='<tr class="'+cls+'">';
+      gHtml+='<td>'+(ji+1)+'</td>';
+      gHtml+='<td><strong>'+j.nom+'</strong> '+cogTxt+'</td>';
+      gHtml+='<td><span class="gl-any">'+j.any+'</span></td>';
+      gHtml+='<td>'+posTxt+'</td>';
+      gHtml+='<td>'+obsTxt+'</td>';
+      gHtml+='</tr>';
+    }
+    gHtml+='</table></div>';
+  }
+  gDiv.innerHTML=gHtml;
+}
+
+// ============ HELPERS CALENDARIO ============
+function cbh(c){var n={al:'Alev\u00edn masc.',in:'Infantil masc.',fe:'Femenino'};var bg={al:'background:#F5C800;color:#5A4200',in:'background:#9B6ED4;color:#fff',fe:'background:#F07030;color:#fff'};return '<div style="'+bg[c]+';border-radius:4px;padding:2px 6px;display:inline-block;margin-top:3px;font-size:11px;font-weight:600">'+n[c]+'</div>';}
+function badge(g,cls){var m=MON[g]||'';return '<span class="'+cls+'" style="white-space:nowrap">'+g+(m?('&middot;'+m):'')+'</span>';}
+function bolv(c){if(c==='al')return 'T1: Kings \u2192 '+badge('A1','ba')+' '+badge('A2','ba')+' / Retos \u2192 '+badge('A3','ba')+' '+badge('A4','ba')+'\nT2: Kings \u2192 '+badge('A3','ba')+' '+badge('A4','ba')+' / Retos \u2192 '+badge('A1','ba')+' '+badge('A2','ba');if(c==='in')return 'T1: Kings \u2192 '+badge('Inf Masc 1','bi')+' '+badge('Inf Masc 2','bi')+' / Retos \u2192 '+badge('Inf Masc 3','bi')+' '+badge('Inf Masc 4','bi')+'\nT2: Kings \u2192 '+badge('Inf Masc 3','bi')+' '+badge('Inf Masc 4','bi')+' / Retos \u2192 '+badge('Inf Masc 1','bi')+' '+badge('Inf Masc 2','bi');return 'T1: Kings \u2192 '+badge('Alev\u00edn Fem','bf')+' '+badge('Inf.Fem 1','bf')+' / Retos \u2192 '+badge('Inf.Fem 2','bf')+' '+badge('Cadet Fem','bf')+'\nT2: Kings \u2192 '+badge('Inf.Fem 2','bf')+' '+badge('Cadet Fem','bf')+' / Retos \u2192 '+badge('Alev\u00edn Fem','bf')+' '+badge('Inf.Fem 1','bf');}
+function renderCD(day){var c=document.getElementById('cdcont');c.innerHTML=day==='sab'?cdSab():day==='dom'?cdDom():cdWeek(day,DAYROT[day].M1,DAYROT[day].M2,DAYROT[day].M3);}
+function cdDom(){var h='<div class="sl">Llegada y bienvenida \u2014 todos juntos</div>';h+='<div class="gr"><div class="tm">8:00</div><div class="ce cb" style="grid-column:span 3"><div class="ct">\uD83D\uDE8C Salida bus \u2014 direcci\u00f3n campus</div></div></div>';h+='<div class="gr"><div class="tm">10:00</div><div class="ce ce2" style="grid-column:span 3"><div class="ct">\uD83C\uDFE0 Llegada \u00b7 instalaci\u00f3n \u00b7 fotos \u00b7 bienvenida</div></div></div>';h+='<div class="gr"><div class="tm">12:30</div><div class="ce cf" style="grid-column:span 3"><div class="ct">\uD83C\uDF7D Comida \u2014 todos</div></div></div>';h+='<div class="gr"><div class="tm">13:30</div><div class="ce cd" style="grid-column:span 3"><div class="ct">\uD83C\uDFDF\uFE0F Pujada a les pistes \u2014 organitzaci\u00f3 foto</div></div></div>';h+='<div class="gr"><div class="tm">14:10</div><div class="ce cfi" style="grid-column:span 3"><div class="ct">\uD83D\uDCF8 FOTO OFICIAL \u2014 todos</div></div></div>';h+='<div class="gr"><div class="tm">15:00</div><div class="ce cb"><div class="ct">\uD83D\uDE8C Bus sale \u2192 Bolvir</div><div class="bgs"><span class="bf">Femenino</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='<div class="sl">Tarde \u2014 M1=Femenino \u00b7 M2=Inf.masc \u00b7 M3=Alev.masc</div>';h+='<div class="colh"><div></div><div class="ch ch1"><div class="el">M1 \u2014 Bolvir</div>'+cbh('fe')+'</div><div class="ch ch2"><div class="el">M2 \u2014 Pista Azul</div>'+cbh('in')+'</div><div class="ch ch3"><div class="el">M3 \u2014 Pista Gris</div>'+cbh('al')+'</div></div>';h+='<div class="gr"><div class="tm">15:30</div><div class="ce cbv"><div class="ct">Tarde Bolvir 15:30\u201318:30</div><div class="al2"><span class="an">T1 Kings:</span>'+badge('Alev\u00edn Fem','bf')+badge('Inf.Fem 1','bf')+'</div><div class="al2"><span class="an">T1 Retos:</span>'+badge('Inf.Fem 2','bf')+badge('Cadet Fem','bf')+'</div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">16:00</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T1\u00b716:00\u201317:30</div><div class="al2"><span class="an">Azul:</span>'+badge('Inf Masc 1','bi')+badge('Inf Masc 2','bi')+'</div><div class="al2"><span class="an">C\u00e9sped:</span>'+badge('Inf Masc 3','bi')+'</div><div class="al2"><span class="an">Hinchables:</span>'+badge('Inf Masc 4','bi')+'</div></div><div class="ce ccp"><div class="ct">T1\u00b716:00\u201317:30</div><div class="al2"><span class="an">Gris:</span>'+badge('A1','ba')+badge('A2','ba')+'</div><div class="al2"><span class="an">C\u00e9sped:</span>'+badge('A3','ba')+'</div><div class="al2"><span class="an">Hinchables:</span>'+badge('A4','ba')+'</div></div></div>';h+='<div class="gr"><div class="tm">17:30</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T2\u00b717:30\u201319:00</div><div class="al2"><span class="an">Azul:</span>'+badge('Inf Masc 3','bi')+badge('Inf Masc 4','bi')+'</div><div class="al2"><span class="an">C\u00e9sped:</span>'+badge('Inf Masc 1','bi')+'</div><div class="al2"><span class="an">Hinchables:</span>'+badge('Inf Masc 2','bi')+'</div></div><div class="ce ccp"><div class="ct">T2\u00b717:30\u201319:00</div><div class="al2"><span class="an">Gris:</span>'+badge('A3','ba')+badge('A4','ba')+'</div><div class="al2"><span class="an">C\u00e9sped:</span>'+badge('A1','ba')+'</div><div class="al2"><span class="an">Hinchables:</span>'+badge('A2','ba')+'</div></div></div>';h+='<div class="gr"><div class="tm">18:30</div><div class="ce cb"><div class="ct">\uD83D\uDE8C Bus recoge Bolvir</div><div class="bgs"><span class="bf">Femenino</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+=cdN('fe','in','al','dom');return h;}
+function cdWeek(day,c1,c2,c3){var iv2=day==='vie';var n={al:'Alev\u00edn masc.',in:'Infantil masc.',fe:'Femenino'};var m2s=SG[c2];var m3s=SG[c3];var h='<div class="colh"><div></div><div class="ch ch1"><div class="el">M1 \u2014 Bolvir</div>'+cbh(c1)+'</div><div class="ch ch2"><div class="el">M2 \u2014 Campus</div>'+cbh(c2)+'</div><div class="ch ch3"><div class="el">M3 \u2014 '+(iv2?'Pista Azul':'Bellver')+'</div>'+cbh(c3)+'</div></div>';h+=iv2?'<div class="sl">Ma\u00f1ana Classificatori</div>':'<div class="sl">Ma\u00f1ana</div>';h+='<div class="gr"><div class="tm">8:00</div><div class="ce cf"><div class="ct">\uD83E\uDD50 Desayuno</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">8:15</div><div class="ce em"></div><div class="ce cf"><div class="ct">\uD83E\uDD50 Desayuno</div><div class="bgs"><span class="'+CB[c2]+'">'+n[c2]+'</span></div></div><div class="ce cf"><div class="ct">\uD83E\uDD50 Desayuno</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+='<div class="gr"><div class="tm">8:45</div><div class="ce cb"><div class="ct">\uD83D\uDE8C \u2192 Bolvir</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">9:15</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T1\u00b79:15\u201310:45</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">'+(iv2?'Gris':M2[c2].M1[g])+':</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div>'+(iv2?'<div class="ce em"></div>':'<div class="ce cb"><div class="ct">\uD83D\uDE8C \u2192 Bellver</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div>')+'</div>';h+='<div class="gr"><div class="tm">9:30</div><div class="ce cbv"><div class="ct">Bolvir\u00b79:30\u201312:10</div><div class="al2"><span class="an">T1 Kings:</span>'+SG[c1].slice(0,2).map(function(g){return badge(g,CB[c1]);}).join('')+'</div><div class="al2"><span class="an">T1 Retos:</span>'+SG[c1].slice(2,4).map(function(g){return badge(g,CB[c1]);}).join('')+'</div></div><div class="ce em"></div>'+(iv2?'<div class="ce ccp"><div class="ct">T1 Classificatori\u00b79:30\u201310:45</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">Azul:</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div>':'<div class="ce cbl"><div class="ct">T1 Bellver\u00b79:30\u201310:45</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">'+M3[c3].T1[g]+':</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div>')+'</div>';h+='<div class="gr"><div class="tm">11:00</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T2\u00b711:00\u201312:30</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">'+(iv2?'Gris':M2[c2].M2[g])+':</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div>'+(iv2?'<div class="ce ccp"><div class="ct">T2 Classificatori\u00b711:00\u201312:30</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">Azul:</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div>':'<div class="ce cbl"><div class="ct">T2 Bellver\u00b711:00\u201312:30</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">'+M3[c3].T2[g]+':</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div>')+'</div>';h+='<div class="gr"><div class="tm">12:10</div><div class="ce cb"><div class="ct">\uD83D\uDE8C Recoge Bolvir</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+=iv2?'':'<div class="gr"><div class="tm">12:40</div><div class="ce em"></div><div class="ce em"></div><div class="ce cb"><div class="ct">\uD83D\uDE8C Recoge Bellver</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+='<div class="sl">Comida+Descanso</div>';h+='<div class="gr"><div class="tm">12:30</div><div class="ce cf"><div class="ct">\uD83C\uDF7D Comida</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce cf"><div class="ct">\uD83C\uDF7D Comida</div><div class="bgs"><span class="'+CB[c2]+'">'+n[c2]+'</span></div></div><div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">12:45</div><div class="ce em"></div><div class="ce em"></div><div class="ce cf"><div class="ct">\uD83C\uDF7D Comida</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+='<div class="gr"><div class="tm">13:15</div><div class="ce em"></div><div class="ce cd"><div class="ct">\uD83C\uDFCA Piscina albergue</div><div class="bgs"><span class="'+CB[c2]+'">'+n[c2]+'</span></div></div><div class="ce cd"><div class="ct">\uD83C\uDFD3 Ping pong</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+='<div class="gr"><div class="tm">13:30</div><div class="ce cb"><div class="ct">\uD83D\uDE8C \u2192 Bolvir desc.</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">13:45</div><div class="ce cd"><div class="ct">\uD83C\uDFCA Piscina Bolvir</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+='';h+=iv2?'':'<div class="gr"><div class="tm">15:45</div><div class="ce em"></div><div class="ce em"></div><div class="ce cb"><div class="ct">\uD83D\uDE8C \u2192 Bellver tarde</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+=iv2?'<div class="sl">Tarde Classificatori</div>':'<div class="sl">Tarde</div>';h+='<div class="gr"><div class="tm">15:30</div><div class="ce cbv"><div class="ct">Bolvir\u00b715:30\u201318:30</div><div class="al2"><span class="an">T1 Kings:</span>'+SG[c1].slice(0,2).map(function(g){return badge(g,CB[c1]);}).join('')+'</div><div class="al2"><span class="an">T1 Retos:</span>'+SG[c1].slice(2,4).map(function(g){return badge(g,CB[c1]);}).join('')+'</div></div><div class="ce em"></div><div class="ce em"></div></div>';if(iv2){h+='<div class="gr"><div class="tm">16:00</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T1 Classificatori\u00b716:00\u201317:30</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">Gris:</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div><div class="ce ccp"><div class="ct">T1 Classificatori\u00b716:00\u201317:30</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">Azul:</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div></div>';h+='<div class="gr"><div class="tm">17:30</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T2 Classificatori\u00b717:30\u201319:00</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">Gris:</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div><div class="ce ccp"><div class="ct">T2 Classificatori\u00b717:30\u201319:00</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">Azul:</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div></div>';}else{h+='<div class="gr"><div class="tm">16:00</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T1 tarde\u00b716:00\u201317:30</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">'+M2[c2].T1[g]+':</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div><div class="ce cbl"><div class="ct">T1 tarde\u00b716:00\u201317:30</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">'+M3[c3].T1t[g]+':</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div></div>';h+='<div class="gr"><div class="tm">17:30</div><div class="ce em"></div><div class="ce ccp"><div class="ct">T2 tarde\u00b717:30\u201319:00</div>'+m2s.map(function(g){return '<div class="al2"><span class="an">'+M2[c2].T2[g]+':</span>'+badge(g,CB[c2])+'</div>';}).join('')+'</div><div class="ce cbl"><div class="ct">T2 tarde\u00b717:30\u201319:00</div>'+m3s.map(function(g){return '<div class="al2"><span class="an">'+M3[c3].T2t[g]+':</span>'+badge(g,CB[c3])+'</div>';}).join('')+'</div></div>';}h+='<div class="gr"><div class="tm">18:30</div><div class="ce cb"><div class="ct">\uD83D\uDE8C Recoge Bolvir</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div><div class="ce em"></div><div class="ce em"></div></div>';h+=iv2?'':'<div class="gr"><div class="tm">19:05</div><div class="ce em"></div><div class="ce em"></div><div class="ce cb"><div class="ct">\uD83D\uDE8C Recoge Bellver</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';h+=cdN(c1,c2,c3,day);return h;}
+function cdN(c1,c2,c3,day){var n={al:'Alev\u00edn',in:'Infantil',fe:'Femenino'};var iv=day==='vie';var nc1=NOCHES[c1][day];var nc2=NOCHES[c2][day];var nc3=NOCHES[c3][day];var h='<div class="sl">Noche</div>';h+='<div class="gr"><div class="tm">19:00</div><div class="ce cd" style="grid-column:span 3"><div class="ct">\uD83D\uDCDE Tiempo libre \u2014 todos</div></div></div>';h+='<div class="gr"><div class="tm">20:00</div>';h+=c1==='in'?'<div class="ce cf"><div class="ct">\uD83C\uDF7D Cena</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div>':'<div class="ce em"></div>';h+=(c2==='fe'||c2==='in')?'<div class="ce cf"><div class="ct">\uD83C\uDF7D Cena</div><div class="bgs"><span class="'+CB[c2]+'">'+n[c2]+'</span></div></div>':'<div class="ce em"></div>';h+='<div class="ce em"></div></div>';h+='<div class="gr"><div class="tm">20:15</div>';h+=c1!=='in'?'<div class="ce cf"><div class="ct">\uD83C\uDF7D Cena</div><div class="bgs"><span class="'+CB[c1]+'">'+n[c1]+'</span></div></div>':'<div class="ce em"></div>';h+=(c2!=='fe'&&c2!=='in')?'<div class="ce cf"><div class="ct">\uD83C\uDF7D Cena</div><div class="bgs"><span class="'+CB[c2]+'">'+n[c2]+'</span></div></div>':'<div class="ce em"></div>';h+='<div class="ce cf"><div class="ct">\uD83C\uDF7D Cena</div><div class="bgs"><span class="'+CB[c3]+'">'+n[c3]+'</span></div></div></div>';if(iv){h+='<div class="gr"><div class="tm">Noche</div><div class="ce cfi" style="grid-column:span 3"><div class="ct">\uD83C\uDFC6 FINAL NOCTURNA FUTSAL+BAILES \u2014 todos</div></div></div>';}else{h+='<div class="gr"><div class="tm">Noche</div><div class="ce cn"><div class="ct">'+nc1+'</div></div><div class="ce cn"><div class="ct">'+nc2+'</div></div><div class="ce cn"><div class="ct">'+nc3+'</div></div></div>';}h+='<div class="gr"><div class="tm">22:30</div><div class="ce cz" style="grid-column:span 3"><div class="ct">\uD83C\uDF19 A dormir \u2014 todos</div></div></div>';h+='<div class="gr"><div class="tm">22:40</div><div class="ce cr" style="grid-column:span 3"><div class="ct">\uD83D\uDCCB Reuni\u00f3n de monitores \u2014 Feedback del d\u00eda</div></div></div>';return h;}
+function cdSab(){var h='<div class="sl">Clausura \u2014 todos juntos</div>';h+='<div class="gr"><div class="tm">8:30</div><div class="ce cd" style="grid-column:span 3"><div class="ct">\u2600\uFE0F Despertar</div></div></div>';h+='<div class="gr"><div class="tm">9:00</div><div class="ce cf" style="grid-column:span 3"><div class="ct">\uD83E\uDD50 Desayuno</div></div></div>';h+='<div class="gr"><div class="tm">9:45</div><div class="ce ccl" style="grid-column:span 3"><div class="ct">\uD83C\uDFC5 Cloenda \u2014 Clausura del campus</div></div></div>';h+='<div class="gr"><div class="tm">11:00</div><div class="ce cb" style="grid-column:span 3"><div class="ct">\uD83D\uDE8C Salida buses \u2014 a casa \u00b7 \u00a1Hasta el pr\u00f3ximo campus!</div></div></div>';return h;}
+
+function renderGD(cat,day){document.getElementById({al:'alev-cont',in:'inf-cont',fe:'fem-cont'}[cat]).innerHTML=bldG(cat,day);}
+function gw(t,c,ti,de){return '<div class="tr2"><div class="tt">'+t+'</div><div class="tc '+c+'"><div class="tct">'+ti+'</div>'+(de?'<div class="tcd">'+de+'</div>':'')+'</div></div>';}
+function gs(t){return '<div class="sep">'+t+'</div>';}
+function bldG(cat,day){
+  var n=NOCHES[cat][day];var iv=(day==='vie');var r=[];
+  if(day==='sab'){r.push(gs('Clausura'));r.push(gw('8:30','gl2','\u2600\uFE0F Despertar',null));r.push(gw('9:00','gf2','\uD83E\uDD50 Desayuno',null));r.push(gw('9:45','gcl','\uD83C\uDFC5 Cloenda \u2014 Clausura del campus','Entrega de trofeos \u00b7 Despedida'));r.push(gw('11:00','gb','\uD83D\uDE8C Salida buses',null));return '<div class="gtl">'+r.join('')+'</div>';}
+  if(day==='dom'){
+    r.push(gs('Llegada \u2014 todos juntos'));r.push(gw('8:00','ge','\uD83D\uDE8C Salida bus \u2192 campus',null));r.push(gw('10:00','ge','\uD83C\uDFE0 Llegada \u00b7 instalaci\u00f3n \u00b7 fotos \u00b7 bienvenida',null));r.push(gw('12:30','gf2','\uD83C\uDF7D Comida',null));
+    if(cat==='fe'){r.push(gs('Tarde \u2014 M1 \u00b7 Bolvir'));r.push(gw('13:30','gb','\uD83D\uDE8C Bus sale \u2192 Bolvir',null));r.push(gw('15:30','gt','Tarde completa \u00b7 15:30\u201318:30',bolv('fe')));r.push(gw('18:30','gb','\uD83D\uDE8C Bus recoge',null));r.push(gs('Noche'));r.push(gw('19:00','gl2','\uD83D\uDCDE Tiempo libre',null));r.push(gw('20:15','gf2','\uD83C\uDF7D Cena',null));r.push(gw('Noche','gn','\uD83E\uDD69 Discoteca+Bingo',null));}
+    else if(cat==='in'){r.push(gs('Tarde \u2014 M2 \u00b7 Campus'));r.push(gw('16:00','gt','T1 \u00b7 16:00\u201317:30',SG.in.map(function(g){return g+'\u00b7'+MON[g]+' \u2192 '+M2.in.M1[g];}).join('\n')));r.push(gw('17:30','gt','T2 \u00b7 17:30\u201319:00',SG.in.map(function(g){return g+'\u00b7'+MON[g]+' \u2192 '+M2.in.M2[g];}).join('\n')));r.push(gs('Noche'));r.push(gw('19:00','gl2','\uD83D\uDCDE Tiempo libre',null));r.push(gw('20:00','gf2','\uD83C\uDF7D Cena',null));r.push(gw('Noche','gn','Kings League noche',null));}
+    else{r.push(gs('Tarde \u2014 M3 \u00b7 Bellver'));r.push(gw('15:45','gb','\uD83D\uDE8C Bus sale \u2192 Bellver',null));r.push(gw('16:00','gt','T1 \u00b7 16:00\u201317:30',SG.al.map(function(g){return g+'\u00b7'+MON[g]+' \u2192 '+M3.al.T1[g];}).join('\n')));r.push(gw('17:30','gt','T2 \u00b7 17:30\u201319:00',SG.al.map(function(g){return g+'\u00b7'+MON[g]+' \u2192 '+M3.al.T2[g];}).join('\n')));r.push(gw('19:05','gb','\uD83D\uDE8C Bus recoge',null));r.push(gs('Noche'));r.push(gw('19:00','gl2','\uD83D\uDCDE Tiempo libre',null));r.push(gw('20:15','gf2','\uD83C\uDF7D Cena',null));r.push(gw('Noche','gn','Din\u00e1micas+Coreograf\u00eda',null));}
+    r.push(gw('22:30','gz','\uD83C\uDF19 A dormir',null));r.push(gw('22:40','gr2','\uD83D\uDCCB Reuni\u00f3n de monitores',null));
+    return '<div class="gtl">'+r.join('')+'</div>';}
+  var modelo=MODEL[cat][day];
+  if(modelo==='M1'){r.push(gs('Ma\u00f1ana \u2014 M1 \u00b7 Bolvir'));r.push(gw('8:00','gf2','\uD83E\uDD50 Desayuno',null));r.push(gw('8:45','gb','\uD83D\uDE8C Bus \u2192 Bolvir',null));r.push(gw('9:30','gm2','Ma\u00f1ana \u00b7 9:30\u201312:10',bolv(cat)));r.push(gw('12:10','gb','\uD83D\uDE8C Bus recoge',null));r.push(gs('Comida y descanso'));r.push(gw('12:30','gf2','\uD83C\uDF7D Comida',null));r.push(gw('13:30','gb','\uD83D\uDE8C \u2192 Bolvir desc.',null));r.push(gw('13:45','gd','\uD83C\uDFCA Piscina Bolvir',null));r.push(gs('Tarde \u2014 M1 \u00b7 Bolvir'));r.push(gw('15:30','gt','Tarde \u00b7 15:30\u201318:30',bolv(cat)));r.push(gw('18:30','gb','\uD83D\uDE8C Bus recoge',null));}
+  else if(modelo==='M2'){r.push(gs('Ma\u00f1ana \u2014 M2 \u00b7 Campus'));r.push(gw('8:15','gf2','\uD83E\uDD50 Desayuno',null));r.push(gw('9:15','gm2','T1 \u00b7 9:15\u201310:45',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M2[cat].M1[g];}).join('\n')));r.push(gw('11:00','gm2','T2 \u00b7 11:00\u201312:30',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M2[cat].M2[g];}).join('\n')));r.push(gs('Comida y descanso'));r.push(gw('12:30','gf2','\uD83C\uDF7D Comida',null));r.push(gw('13:15','gd','\uD83C\uDFCA Piscina albergue',null));r.push(gs('Tarde \u2014 M2 \u00b7 Campus'));r.push(gw('16:00','gt','T1 tarde \u00b7 16:00\u201317:30',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M2[cat].T1[g];}).join('\n')));r.push(gw('17:30','gt','T2 tarde \u00b7 17:30\u201319:00',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M2[cat].T2[g];}).join('\n')));}
+  else{r.push(gs('Ma\u00f1ana \u2014 M3 \u00b7 Bellver'));r.push(gw('8:15','gf2','\uD83E\uDD50 Desayuno',null));r.push(gw('9:15','gb','\uD83D\uDE8C \u2192 Bellver',null));r.push(gw('9:30','gm2','T1 \u00b7 9:30\u201310:45',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M3[cat].T1[g];}).join('\n')));r.push(gw('11:00','gm2','T2 \u00b7 11:00\u201312:30',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M3[cat].T2[g];}).join('\n')));r.push(gw('12:40','gb','\uD83D\uDE8C Bus recoge',null));r.push(gs('Comida y descanso'));r.push(gw('12:45','gf2','\uD83C\uDF7D Comida',null));r.push(gw('13:15','gd','\uD83C\uDFD3 Ping pong',null));r.push(gs('Tarde \u2014 M3 \u00b7 Bellver'));r.push(gw('15:45','gb','\uD83D\uDE8C \u2192 Bellver tarde',null));r.push(gw('16:00','gt','T1 tarde \u00b7 16:00\u201317:30',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M3[cat].T1t[g];}).join('\n')));r.push(gw('17:30','gt','T2 tarde \u00b7 17:30\u201319:00',SG[cat].map(function(g){return g+'\u00b7'+(MON[g]||'')+' \u2192 '+M3[cat].T2t[g];}).join('\n')));r.push(gw('19:05','gb','\uD83D\uDE8C Bus recoge',null));}
+  r.push(gs('Noche'));r.push(gw('19:00','gl2','\uD83D\uDCDE Tiempo libre',null));
+  var ch=(modelo==='M2'&&(cat==='fe'||cat==='in'))?'20:00':'20:15';
+  r.push(gw(ch,'gf2','\uD83C\uDF7D Cena',null));
+  if(iv)r.push(gw('Noche','gfi','\uD83C\uDFC6 FINAL NOCTURNA FUTSAL+BAILES \u2014 todos',null));
+  else r.push(gw('Noche','gn',n,null));
+  r.push(gw('22:30','gz','\uD83C\uDF19 A dormir',null));r.push(gw('22:40','gr2','\uD83D\uDCCB Reuni\u00f3n de monitores',null));
+  return '<div class="gtl">'+r.join('')+'</div>';}
+
+// BUSCADOR
+var AG=['A1','A2','A3','A4','Inf Masc 1','Inf Masc 2','Inf Masc 3','Inf Masc 4','Alev\u00edn Fem','Inf.Fem 1','Inf.Fem 2','Cadet Fem'];
+var bG=null,bD=0;
+function gcat(g){if(['A1','A2','A3','A4'].includes(g))return 'al';if(g.startsWith('Inf Masc'))return 'in';return 'fe';}
+function bDo(v){var vl=v.trim().toLowerCase();if(MON_INV[vl]){bRen(MON_INV[vl]);return;}var m=AG.find(function(g){return g.toLowerCase().includes(vl);});if(m)bRen(m);else{bG=null;document.getElementById('bres').innerHTML='<div class="nores">No se encontr\u00f3 ning\u00fan grupo o monitor</div>';}}
+function bSel(g){document.getElementById('bsearch').value=g;bRen(g);}
+function bRen(g){bG=g;bD=0;var c=gcat(g);var m=MON[g]||'';var h='<div class="ghead"><span class="gbadge" style="'+CATCOL[c]+'">'+g+'</span><span class="gname">'+CATNAMES[c]+'</span><span class="gmon">&middot; Monitor: <strong>'+m+'</strong></span></div><div class="ddtabs">';DL.forEach(function(d,i){h+='<button class="ddt'+(i===0?' active':'')+'" onclick="bSw('+i+',this)">'+d+'</button>';});h+='</div><div class="bsched" id="bsc">'+bldB(g,0)+'</div>';document.getElementById('bres').innerHTML=h;}
+function bSw(i,btn){bD=i;document.querySelectorAll('#bres .ddt').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.getElementById('bsc').innerHTML=bldB(bG,i);}
+function br(t,c,ti,de){return '<div class="brow"><div class="btm">'+t+'</div><div class="bcard '+c+'"><div class="btt">'+ti+'</div>'+(de?'<div class="btd">'+de+'</div>':'')+'</div></div>';}
+function bs(t){return '<div class="bsep">'+t+'</div>';}
+function bldB(g,di){var day=DK[di];var cat=gcat(g);var m=MON[g]||g;
+  if(di===6){return[bs('Clausura'),br('8:30','bli','\u2600\uFE0F Despertar',null),br('9:00','bfa','\uD83E\uDD50 Desayuno',null),br('9:45','bclo','\uD83C\uDFC5 Cloenda','Trofeos \u00b7 Despedida'),br('11:00','bbus','\uD83D\uDE8C Salida buses',null)].join('');}
+  var n=NOCHES[cat][day];var iv=(day==='vie');var r=[];
+  if(di===0){
+    r.push(bs('Llegada'));r.push(br('8:00','besp','\uD83D\uDE8C Salida bus \u2192 campus',null));r.push(br('10:00','besp','\uD83C\uDFE0 Llegada \u00b7 instalaci\u00f3n \u00b7 fotos',null));r.push(br('12:30','bfa','\uD83C\uDF7D Comida',null));
+    if(cat==='fe'){r.push(bs('Tarde \u2014 M1 \u00b7 Bolvir'));r.push(br('13:30','bbus','\uD83D\uDE8C Bus \u2192 Bolvir',null));r.push(br('15:30','bta','Tarde \u00b7 15:30\u201318:30',null));r.push(br('18:30','bbus','\uD83D\uDE8C Bus recoge',null));r.push(bs('Noche'));r.push(br('19:00','bli','\uD83D\uDCDE Tiempo libre',null));r.push(br('20:15','bfa','\uD83C\uDF7D Cena',null));r.push(br('Noche','bnoc','\uD83E\uDD69 Discoteca+Bingo',null));}
+    else if(cat==='in'){r.push(bs('Tarde \u2014 M2 \u00b7 Campus'));r.push(br('16:00','bta','T1 \u00b7 16:00\u201317:30',g+'\u00b7'+m+' \u2192 '+M2.in.M1[g]));r.push(br('17:30','bta','T2 \u00b7 17:30\u201319:00',g+'\u00b7'+m+' \u2192 '+M2.in.M2[g]));r.push(bs('Noche'));r.push(br('19:00','bli','\uD83D\uDCDE Tiempo libre',null));r.push(br('20:00','bfa','\uD83C\uDF7D Cena',null));r.push(br('Noche','bnoc','Kings League noche',null));}
+    else{r.push(bs('Tarde \u2014 M3 \u00b7 Bellver'));r.push(br('15:45','bbus','\uD83D\uDE8C Bus \u2192 Bellver',null));r.push(br('16:00','bta','T1 \u00b7 16:00\u201317:30',g+'\u00b7'+m+' \u2192 '+M3.al.T1[g]));r.push(br('17:30','bta','T2 \u00b7 17:30\u201319:00',g+'\u00b7'+m+' \u2192 '+M3.al.T2[g]));r.push(br('19:05','bbus','\uD83D\uDE8C Bus recoge',null));r.push(bs('Noche'));r.push(br('19:00','bli','\uD83D\uDCDE Tiempo libre',null));r.push(br('20:15','bfa','\uD83C\uDF7D Cena',null));r.push(br('Noche','bnoc','Din\u00e1micas+Coreograf\u00eda',null));}
+    r.push(br('22:30','bdor','\uD83C\uDF19 A dormir',null));r.push(br('22:40','breu','\uD83D\uDCCB Reuni\u00f3n de monitores',null));return r.join('');}
+  var mo=MODEL[cat][day];
+  if(mo==='M1'){r.push(bs('Ma\u00f1ana \u2014 M1 \u00b7 Bolvir'));r.push(br('8:00','bfa','\uD83E\uDD50 Desayuno',null));r.push(br('8:45','bbus','\uD83D\uDE8C Bus \u2192 Bolvir',null));r.push(br('9:30','bm','Ma\u00f1ana \u00b7 9:30\u201312:10',null));r.push(br('12:10','bbus','\uD83D\uDE8C Bus recoge',null));r.push(bs('Comida y descanso'));r.push(br('12:30','bfa','\uD83C\uDF7D Comida',null));r.push(br('13:30','bbus','\uD83D\uDE8C \u2192 Bolvir desc.',null));r.push(br('13:45','bdes','\uD83C\uDFCA Piscina Bolvir',null));r.push(bs('Tarde \u2014 M1 \u00b7 Bolvir'));r.push(br('15:30','bta','Tarde \u00b7 15:30\u201318:30',null));r.push(br('18:30','bbus','\uD83D\uDE8C Bus recoge',null));}
+  else if(mo==='M2'){r.push(bs('Ma\u00f1ana \u2014 M2 \u00b7 Campus'));r.push(br('8:15','bfa','\uD83E\uDD50 Desayuno',null));r.push(br('9:15','bm','T1 \u00b7 9:15\u201310:45',g+'\u00b7'+m+' \u2192 '+M2[cat].M1[g]));r.push(br('11:00','bm','T2 \u00b7 11:00\u201312:30',g+'\u00b7'+m+' \u2192 '+M2[cat].M2[g]));r.push(bs('Comida y descanso'));r.push(br('12:30','bfa','\uD83C\uDF7D Comida',null));r.push(br('13:15','bdes','\uD83C\uDFCA Piscina albergue',null));r.push(bs('Tarde \u2014 M2 \u00b7 Campus'));r.push(br('16:00','bta','T1 tarde \u00b7 16:00\u201317:30',g+'\u00b7'+m+' \u2192 '+M2[cat].T1[g]));r.push(br('17:30','bta','T2 tarde \u00b7 17:30\u201319:00',g+'\u00b7'+m+' \u2192 '+M2[cat].T2[g]));}
+  else{r.push(bs('Ma\u00f1ana \u2014 M3 \u00b7 Bellver'));r.push(br('8:15','bfa','\uD83E\uDD50 Desayuno',null));r.push(br('9:15','bbus','\uD83D\uDE8C \u2192 Bellver',null));r.push(br('9:30','bm','T1 \u00b7 9:30\u201310:45',g+'\u00b7'+m+' \u2192 '+M3[cat].T1[g]));r.push(br('11:00','bm','T2 \u00b7 11:00\u201312:30',g+'\u00b7'+m+' \u2192 '+M3[cat].T2[g]));r.push(br('12:40','bbus','\uD83D\uDE8C Bus recoge',null));r.push(bs('Comida y descanso'));r.push(br('12:45','bfa','\uD83C\uDF7D Comida',null));r.push(br('13:15','bdes','\uD83C\uDFD3 Ping pong',null));r.push(bs('Tarde \u2014 M3 \u00b7 Bellver'));r.push(br('15:45','bbus','\uD83D\uDE8C \u2192 Bellver tarde',null));r.push(br('16:00','bta','T1 tarde \u00b7 16:00\u201317:30',g+'\u00b7'+m+' \u2192 '+M3[cat].T1t[g]));r.push(br('17:30','bta','T2 tarde \u00b7 17:30\u201319:00',g+'\u00b7'+m+' \u2192 '+M3[cat].T2t[g]));r.push(br('19:05','bbus','\uD83D\uDE8C Bus recoge',null));}
+  r.push(bs('Noche'));r.push(br('19:00','bli','\uD83D\uDCDE Tiempo libre',null));
+  var ch=(mo==='M2'&&(cat==='fe'||cat==='in'))?'20:00':'20:15';
+  r.push(br(ch,'bfa','\uD83C\uDF7D Cena',null));
+  if(iv)r.push(br('Noche','bfin','\uD83C\uDFC6 FINAL NOCTURNA FUTSAL+BAILES',null));
+  else r.push(br('Noche','bnoc',n,null));
+  r.push(br('22:30','bdor','\uD83C\uDF19 A dormir',null));r.push(br('22:40','breu','\uD83D\uDCCB Reuni\u00f3n de monitores',null));
+  return r.join('');}
+
+setTimeout(function(){renderCD('dom');renderGD('al','dom');renderGD('in','dom');renderGD('fe','dom');ruInitRoutes();},50);
+
+// ===== PUNTUACIO V2 =====
+var AT_TOKEN = 'patdoEYnYTkcb9GVU.16c240ecf1d4875933fd1fb2b6751a5de933d1b2b7ba65ba940ab43861d3564a';
+var AT_BASE = 'appVw20WjbXxpxdpi';
+var AT_TABLE = 'Puntuacions';
+var AT_URL = 'https://api.airtable.com/v0/' + AT_BASE + '/' + AT_TABLE;
+var PU2_GRUPS_LIST = [
+  "Infantil Masc 1","Infantil Masc 2","Infantil Masc 3","Infantil Masc 4",
+  "Alevi Masc 1","Alevi Masc 2","Alevi Masc 3","Alevi Masc 4",
+  "Cadet Fem 1","Infantil Fem 1","Infantil Fem 2","Alevi Fem 1"
+];
+var PU2_CAT_COLOR = {
+  "Infantil Masc 1":"#7B4FB5","Infantil Masc 2":"#7B4FB5","Infantil Masc 3":"#7B4FB5","Infantil Masc 4":"#7B4FB5",
+  "Alevi Masc 1":"#C9A800","Alevi Masc 2":"#C9A800","Alevi Masc 3":"#C9A800","Alevi Masc 4":"#C9A800",
+  "Cadet Fem 1":"#C9560D","Infantil Fem 1":"#C9560D","Infantil Fem 2":"#C9560D","Alevi Fem 1":"#C9560D"
+};
+var PU2_JUGADORS = {
+  "Infantil Masc 1":["Albert Aycart","Xavier Lopez","Biel Rios","Iker Martinez","Biel Sanchez","Alex Moreno","Mateu Julia","Alex Aguila","Pablo Sanchez","Emir Isai Montoya","Didac Belmar","Leo Moreno","Kenzo Hayashi","David Gil"],
+  "Infantil Masc 2":["Teo Santafe","Hugo Gomez","Nil Vicente","Jan Marco","Eloi Roman","Kailash Urosa","Marc Vila","Samuel Iraola Llorente","Pau Estrella","Joel Pacheco","Roger Morell","Josep Miquel Gallart","Adria Labairu"],
+  "Infantil Masc 3":["Antonio Llinares","Nil Saladie","Guillem Salvado","Adria Martell","Nicolas Lao","Xavi Pampols","Genis Bartolome","David Olivares","Carles Humet Garolera","Lucas Rodriguez","Jan Cervello","Unai Dominguez","Alejandro Lopez","Oriol Capdevila"],
+  "Infantil Masc 4":["Pau Teixido","Oriol Sancho","Marti Rubio","Pau Del Prado","Pau Monjo","Biel Batuecas","Aleix Guerrero","Pau Ruz","Mikel Fagundez Justes","Jose Antonio Garcia","Anibal Garriga","Oriol Ponsico","Mirko Jankovic","Guillem Torrell","Alvaro Barredo"],
+  "Alevi Masc 1":["Alvaro Gonzalez","Aleix Pannon","Mario Jimenez","Aleix Gil","Aleix Fernandez","Joel Morilla","Biel Vallez","Marti Vallez","Bruno Medina","Marc Ramon","Iker Membrives","Marc Galan","Oriol Ruiz"],
+  "Alevi Masc 2":["Lucas Compte","Biel Brull","Guillem Canete","Nahuel Sosa","Anselm Fabregat","Iu Medina","Alex Luna","Leo Trabazos","Victor Perez","Ibai Garate","Aleix Llort","Pol Lozano","Joan Ferran"],
+  "Alevi Masc 3":["Alex Olid","Jan Serano","Erik Sanchez","Oriol Olivart","Marcel Sakr","Xavi Sanz","Joan Solsona","Marcal Maurell","Biel Perez","Marcel Fernandez","Lluc Marturis","Unai Lopez","Ramon Alfos","Nacho Rodriguez"],
+  "Alevi Masc 4":["Pau Vidal","Sergi Garrigo","Lleo Sabat","Roger Blanco","Bruno Ramallo","Lluc Alba","Aitor Valderrama","Iker Quirantes","Marti Irla","Alex Santesmases","Francesc Rius","Marti Martinez","Oscar Clos"],
+  "Cadet Fem 1":["Sabina Sicilia","Carla Rossi","Adriana Pons","Queralt Raventos","Marina Balaguero","Aneu Isern","Urgell Isern","Aran Bonillo","Ona Carrera","Maria Gonfaus","Elia Tribo","Izaro Gamazo","Duna Fernandez","Chloe Berdie","Laia Verdaguer"],
+  "Infantil Fem 1":["Laia Minoves","Anna Ripoll","Abril Granado","Carla Mejias","Bruna Riera","Martina Grassas","Chloe Cea","Carla Castella","Daniella Vilet","Mar Jordan","Magali Nadal","Martina Sero","Noa Barranco","Zoe Lopez"],
+  "Infantil Fem 2":["Niah Cano","Aina Saavedra Olivero","Daniela Llopart","Galla Sabate","Vega Perez","Xenia Vila","Ona Parra","Abril Jozan","Bernat Jimenez","Leire Daza","Nuria Marcos","Queralt Sole","Judith Escolar","Paula Anglade","Carla Anglade"],
+  "Alevi Fem 1":["Lis Garcia","Valentina Lia Sayol","Gina Bernadas","Julia Granado","Dafne Muñoz","Mar Cocina","Mar Matamoros","Aida Sebastian","Berta Genoves","Martina Fontanet","Julia Gilabert","Mireia Lluma","Maria Jimenez","Queralt Font","Edda Garcia"]
+};
+var PU2_POS = [
+  {key:'actitud',     label:'Actitud',           icon:'💪', max:5},
+  {key:'participacio',label:'Participació',       icon:'🙋', max:5},
+  {key:'companerisme',label:'Companyerisme',      icon:'🤝', max:5},
+  {key:'entreno',     label:'Bon entrenament',    icon:'⚽', max:5},
+  {key:'aura',        label:'Aura',               icon:'🔥', max:5},
+  {key:'habitacio',   label:'Habitació neta',     icon:'🛏️', max:5},
+];
+var PU2_NEG = [
+  {key:'targeta',   label:'Targeta groga',   icon:'🟡', pts:-3},
+  {key:'respeto',   label:'Falta de respecte',icon:'🚫', pts:-5},
+  {key:'impuntual', label:'Impuntualitat',   icon:'⏰', pts:-2},
+  {key:'jaimito',   label:'Jaimitada',       icon:'🤡', pts:-2},
+];
+
+var pu2PosVals = {};
+var pu2NegVals = {};
+var pu2RankModeVal = 'general';
+
+function pu2Init() {
+  // Init grup selector
+  var sel = document.getElementById('pu2-grup');
+  if(!sel) return;
+  sel.innerHTML = PU2_GRUPS_LIST.map(function(g){return '<option value="'+g+'">'+g+'</option>';}).join('');
+  pu2LoadJugadors();
+  pu2RenderPosCards();
+  pu2RenderNegCards();
+}
+
+function pu2LoadJugadors() {
+  var grup = document.getElementById('pu2-grup').value;
+  var sel = document.getElementById('pu2-jugador');
+  var jugs = PU2_JUGADORS[grup] || [];
+  sel.innerHTML = jugs.map(function(j){return '<option value="'+j+'">'+j+'</option>';}).join('');
+}
+
+function pu2RenderPosCards() {
+  var cont = document.getElementById('pu2-pos-cards');
+  if(!cont) return;
+  var html = '';
+  PU2_POS.forEach(function(cat) {
+    pu2PosVals[cat.key] = pu2PosVals[cat.key] || 0;
+    html += '<div class="pu-stars-card"><div class="pu-stars-name">'+cat.icon+' '+cat.label+'</div><div class="pu-stars-row" id="pu2-stars-'+cat.key+'">';
+    for(var s=1;s<=cat.max;s++) {
+      html += '<span class="pu-star" onclick="pu2SetStar(\'' + cat.key + '\',' + s + ',this)">&#9733;</span>';
+    }
+    html += '</div></div>';
+  });
+  cont.innerHTML = html;
+}
+
+function pu2StarClick(el) {
+  var key = el.getAttribute('data-key');
+  var val = parseInt(el.getAttribute('data-val'));
+  pu2SetStar(key, val, el);
+}
+function pu2SetStar(key, val, el) {
+  pu2PosVals[key] = val;
+  var row = document.getElementById('pu2-stars-'+key);
+  if(row) row.querySelectorAll('.pu-star').forEach(function(s,i){
+    s.classList.toggle('filled', i < val);
+  });
+}
+
+function pu2RenderNegCards() {
+  var cont = document.getElementById('pu2-neg-cards');
+  if(!cont) return;
+  var html = '';
+  PU2_NEG.forEach(function(cat) {
+    pu2NegVals[cat.key] = pu2NegVals[cat.key] || 0;
+    html += '<div class="pu-neg-card">';
+    html += '<div class="pu-neg-info"><div class="pu-neg-name">'+cat.icon+' '+cat.label+'</div>';
+    html += '<div class="pu-neg-pts">'+cat.pts+' punts cada vegada</div></div>';
+    html += '<div class="pu-neg-ctrl">';
+    html += '<button class="pu-neg-btn pu-btn-rem" data-key="'+cat.key+'" data-dir="-1" onclick="pu2NegClick(this)">&#8722;</button>';
+    html += '<span class="pu-neg-count" id="pu2-neg-'+cat.key+'">0</span>';
+    html += '<button class="pu-neg-btn pu-btn-add" data-key="'+cat.key+'" data-dir="1" onclick="pu2NegClick(this)">+</button>';
+    html += '</div></div>';
+  });
+  cont.innerHTML = html;
+}
+
+function pu2NegClick(el) {
+  var key = el.getAttribute('data-key');
+  var dir = parseInt(el.getAttribute('data-dir'));
+  pu2NegChange(key, dir);
+}
+function pu2NegChange(key, dir) {
+  pu2NegVals[key] = Math.max(0, (pu2NegVals[key]||0) + dir);
+  var el = document.getElementById('pu2-neg-'+key);
+  if(el) el.textContent = pu2NegVals[key];
+}
+
+function showToast2(msg) {
+  var t = document.getElementById('toast2');
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');}, 2200);
+}
+
+function pu2Guardar() {
+  var monitor = document.getElementById('pu2-monitor').value.trim();
+  if(!monitor) { showToast2('Escriu el teu nom de monitor'); return; }
+  var grup = document.getElementById('pu2-grup').value;
+  var jugador = document.getElementById('pu2-jugador').value;
+  if(!jugador) { showToast2('Selecciona un jugador'); return; }
+
+  var totalPos = 0;
+  PU2_POS.forEach(function(c){ totalPos += (pu2PosVals[c.key]||0); });
+  var totalNeg = 0;
+  PU2_NEG.forEach(function(c){ totalNeg += (pu2NegVals[c.key]||0) * Math.abs(c.pts); });
+  var total = totalPos - totalNeg;
+
+  if(totalPos === 0 && totalNeg === 0) { showToast2('Posa almenys una puntuació'); return; }
+
+  // Construir detall
+  var detallParts = [];
+  PU2_POS.forEach(function(c){ if(pu2PosVals[c.key]) detallParts.push(c.icon+c.label+':'+pu2PosVals[c.key]); });
+  PU2_NEG.forEach(function(c){ if(pu2NegVals[c.key]) detallParts.push(c.icon+c.label+':'+pu2NegVals[c.key]+'x('+c.pts+')'); });
+
+  var record = {
+    fields: {
+      jugador: jugador,
+      grup: grup,
+      monitor: monitor,
+      totalPos: totalPos,
+      totalNeg: totalNeg,
+      total: total,
+      detall: detallParts.join(' | '),
+      timestamp: new Date().toISOString()
+    }
+  };
+
+  // Deshabilitar botón mientras guarda
+  var btn = document.querySelector('.pu-save-btn2');
+  if(btn) { btn.disabled = true; btn.textContent = 'Guardant...'; }
+
+  fetch(AT_URL, {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer ' + AT_TOKEN,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(record)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if(data.id) {
+      showToast2('Guardat! ' + jugador + ' → ' + (total >= 0 ? '+' : '') + total + ' pts');
+      var targetesAraMateix = pu2NegVals['targeta'] || 0;
+      pu2PosVals = {};
+      pu2NegVals = {};
+      pu2RenderPosCards();
+      pu2RenderNegCards();
+      document.getElementById('pu2-monitor').value = '';
+      if(targetesAraMateix > 0) {
+        tgCheckJugador(jugador, grup);
+      }
+    } else {
+      showToast2('Error: ' + JSON.stringify(data));
+    }
+  })
+  .catch(function(e){
+    showToast2('Error de connexió: ' + e.message);
+  })
+  .finally(function(){
+    if(btn) { btn.disabled = false; btn.textContent = 'Guardar puntuació'; }
+  });
+}
+
+function sPuTab2(id,btn){
+  var pPuntuar = document.getElementById('pu2-puntuar');
+  var pRanking = document.getElementById('pu2-ranking');
+  var bPuntuar = document.getElementById('pu-tab-puntuar');
+  var bRanking = document.getElementById('pu-tab-ranking');
+  if(pPuntuar) pPuntuar.style.display = id==='puntuar'?'block':'none';
+  if(pRanking) pRanking.style.display = id==='ranking'?'block':'none';
+  if(bPuntuar){
+    bPuntuar.style.background = id==='puntuar'?'#fff':'transparent';
+    bPuntuar.style.color = id==='puntuar'?'#2C3E50':'#666';
+    bPuntuar.style.boxShadow = id==='puntuar'?'0 1px 3px rgba(0,0,0,.15)':'none';
+  }
+  if(bRanking){
+    bRanking.style.background = id==='ranking'?'#fff':'transparent';
+    bRanking.style.color = id==='ranking'?'#2C3E50':'#666';
+    bRanking.style.boxShadow = id==='ranking'?'0 1px 3px rgba(0,0,0,.15)':'none';
+  }
+  if(id==='ranking') pu2RenderRanking();
+}
+function pu2RankMode(mode, btn) {
+  pu2RankModeVal = mode;
+  document.querySelectorAll('.rk-tab2').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  pu2RenderRanking();
+}
+
+function pu2RenderRanking() {
+  var cont = document.getElementById('pu2-rk-cont');
+  if(!cont) return;
+  cont.innerHTML = '<div class="rk-empty2">Carregant ranking...</div>';
+
+  // Carregar tots els registres d'Airtable (paginació)
+  function fetchAll(offset, acc) {
+    var url = AT_URL + '?pageSize=100' + (offset ? '&offset=' + offset : '');
+    fetch(url, {
+      headers: { 'Authorization': 'Bearer ' + AT_TOKEN }
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      var recs = data.records || [];
+      recs.forEach(function(r){ acc.push(r.fields); });
+      if(data.offset) {
+        fetchAll(data.offset, acc);
+      } else {
+        pu2ProcessRanking(acc);
+      }
+    })
+    .catch(function(e){
+      cont.innerHTML = '<div class="rk-empty2">Error carregant dades: ' + e.message + '</div>';
+    });
+  }
+  fetchAll(null, []);
+}
+
+function pu2ProcessRanking(entries) {
+  var cont = document.getElementById('pu2-rk-cont');
+  if(!cont) return;
+
+  // Agregar per jugador
+  var agg = {};
+  entries.forEach(function(e){
+    if(!agg[e.jugador]) agg[e.jugador] = {total:0, count:0, grup:e.grup};
+    agg[e.jugador].total += e.total;
+    agg[e.jugador].count += 1;
+  });
+
+  if(pu2RankModeVal === 'general') {
+    var list = Object.keys(agg).map(function(n){
+      return {name:n, total:agg[n].total, count:agg[n].count, grup:agg[n].grup};
+    });
+    list.sort(function(a,b){return b.total - a.total;});
+    if(list.length === 0){cont.innerHTML='<div class="rk-empty2">Encara no hi ha puntuacions</div>';return;}
+    var html = '';
+    list.forEach(function(it,i){
+      var medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);
+      var posClass = i===0?'gold':i===1?'silver':i===2?'bronze':'';
+      var scoreClass = it.total < 0 ? 'neg' : '';
+      html += '<div class="rk-item2'+(i<3?' top3':'')+'"><div class="rk-pos2 '+posClass+'">'+medal+'</div>';
+      html += '<div class="rk-info2"><div class="rk-name2">'+it.name+'</div>';
+      html += '<div class="rk-sub2">'+it.grup+' &middot; '+it.count+' entrada'+(it.count!==1?'es':'')+'</div>';
+      if(i<3) html += '<div class="rk-band2">🎗️ Braçalet</div>';
+      html += '</div><div class="rk-score2 '+scoreClass+'">'+(it.total>=0?'+':'')+it.total+'<div style="font-size:10px;font-weight:400;color:#aaa;text-align:right">pts</div></div></div>';
+    });
+    cont.innerHTML = html;
+
+  } else {
+    // Per grups
+    var byGrup = {};
+    Object.keys(agg).forEach(function(name){
+      var g = agg[name].grup;
+      if(!byGrup[g]) byGrup[g] = [];
+      byGrup[g].push({name:name, total:agg[name].total, count:agg[name].count});
+    });
+    if(Object.keys(byGrup).length === 0){cont.innerHTML='<div class="rk-empty2">Encara no hi ha puntuacions</div>';return;}
+    var html = '';
+    PU2_GRUPS_LIST.forEach(function(g){
+      if(!byGrup[g] || byGrup[g].length === 0) return;
+      var list = byGrup[g].sort(function(a,b){return b.total-a.total;});
+      var col = PU2_CAT_COLOR[g] || '#555';
+      html += '<div class="rk-grup-section">';
+      html += '<div class="rk-grup-title" style="background:'+col+'">'+g+'</div>';
+      list.forEach(function(it,i){
+        var medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);
+        var posClass = i===0?'gold':i===1?'silver':i===2?'bronze':'';
+        var scoreClass = it.total < 0 ? 'neg' : '';
+        html += '<div class="rk-item2'+(i<3?' top3':'')+'"><div class="rk-pos2 '+posClass+'">'+medal+'</div>';
+        html += '<div class="rk-info2"><div class="rk-name2">'+it.name+'</div>';
+        html += '<div class="rk-sub2">'+it.count+' entrada'+(it.count!==1?'es':'')+'</div></div>';
+        html += '<div class="rk-score2 '+scoreClass+'">'+(it.total>=0?'+':'')+it.total+'<div style="font-size:10px;font-weight:400;color:#aaa;text-align:right">pts</div></div></div>';
+      });
+      html += '</div>';
+    });
+    cont.innerHTML = html;
+  }
+} // fi pu2ProcessRanking
+
+function pu2ClearAll(){
+  if(!confirm('Borrar TOTES les puntuacions d\'Airtable? No es pot desfer.')) return;
+  showToast2('Esborrant...');
+  // Primer obtenir tots els IDs
+  fetch(AT_URL + '?pageSize=100', {
+    headers: { 'Authorization': 'Bearer ' + AT_TOKEN }
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var ids = (data.records||[]).map(function(r){return r.id;});
+    if(ids.length === 0){ showToast2('No hi ha puntuacions'); return; }
+    // Esborrar en grups de 10 (límit Airtable)
+    var chunks = [];
+    for(var i=0;i<ids.length;i+=10) chunks.push(ids.slice(i,i+10));
+    var promises = chunks.map(function(chunk){
+      return fetch(AT_URL + '?' + chunk.map(function(id){return 'records[]='+id;}).join('&'), {
+        method: 'DELETE',
+        headers: { 'Authorization': 'Bearer ' + AT_TOKEN }
+      });
+    });
+    Promise.all(promises).then(function(){
+      showToast2('Puntuacions esborrades');
+      pu2RenderRanking();
+    });
+  })
+  .catch(function(e){ showToast2('Error: ' + e.message); });
+}
+
+
+function ruTab(id, btn) {
+  document.getElementById('ru-anada').style.display = id==='anada' ? 'flex' : 'none';
+  document.getElementById('ru-tornada').style.display = id==='tornada' ? 'flex' : 'none';
+  document.querySelectorAll('.ru-tgl-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+}
+
+
+function itFilt(cat, btn) {
+  document.querySelectorAll('#it-filters button').forEach(function(b){
+    b.style.background='transparent';
+    b.style.color='#666';
+    b.style.border='.5px solid #ccc';
+  });
+  btn.style.background='#C0392B';
+  btn.style.color='#fff';
+  btn.style.border='.5px solid transparent';
+  document.querySelectorAll('#it-grid .it-card').forEach(function(c){
+    c.style.display = (cat==='all' || c.getAttribute('data-cat')===cat) ? 'block' : 'none';
+  });
+}
+
+function initAll(){
+  try {
+    var cdcont = document.getElementById('cdcont');
+    if(cdcont) renderCD('dom');
+    renderGD('al','dom');
+    renderGD('in','dom');
+    renderGD('fe','dom');
+    // Activar primer dia
+    var firstDt = document.querySelector('#mp-cj .dt');
+    if(firstDt && !document.querySelector('#mp-cj .dt.active')){
+      firstDt.classList.add('active');
+    }
+  } catch(e){ console.log('initAll error:', e); }
+}
+
+// Estrategia multi-intento para iOS Safari
+var _initDone = false;
+function safeInit(){
+  if(_initDone) return;
+  _initDone = true;
+  initAll();
+}
+
+// Intent 1: DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(safeInit, 100);
+});
+
+// Intent 2: window load (iOS backup)
+window.addEventListener('load', function(){
+  setTimeout(safeInit, 50);
+  // Doble seguretat per iOS
+  setTimeout(function(){
+    var cdcont = document.getElementById('cdcont');
+    if(cdcont && cdcont.innerHTML.trim() === '') {
+      _initDone = false;
+      safeInit();
+    }
+  }, 500);
+});
+
+// Intent 3: readyState immediate
+if(document.readyState === 'complete'){
+  setTimeout(safeInit, 50);
+}
+
+
+
+document.addEventListener('DOMContentLoaded',function(){
+  renderCD('dom');
+  document.querySelector('#mp-cj .dt').classList.add('active');
+  renderGD('al','dom');renderGD('in','dom');renderGD('fe','dom');
+});
+window.addEventListener('load',function(){
+  renderCD('dom');
+  renderGD('al','dom');renderGD('in','dom');renderGD('fe','dom');
+});
+
+</script>
+<script>
+var RU_DATA = {"anada":{"Balaguer":["Queralt Solé Roca","Àlex Aguilà Egozcue","Mar Matamoros Bota","Èlia Tribó Valls","Aleix Gil Sisó","Iker Membrives Vázquez","Bruna Riera Font","Oriol Capdevila Balcells","Abril Granado","Júlia Granado","Xenia Vila Ortiz","Ona Carrera Pintó","Duna Fernandez Gilabert","Júlia Gilabert Mitjavila","Josep Miquel Gallart Olivero","Aran Bonillo","Lis Garcia Corrales","Núria Marcos Figueres","Leire Daza Risco","Martina Seró Canchal","Carla Castellà Novell","Gal·la Sabaté Esquerda","Marina Balgueró Querol","Xavi Pampols Teixido","Joan Solsona Sanchez","Roger Blanco Pellicer","Xavi Sanz Rodríguez"],"Mataró":["Marc Galán Teixidó","Noa Barranco Escobero","Martina Grasas","Òscar Clos i Riera","Pau Estrella Romero","Oriol Sancho","Denis Fontanet","Carles Humet Garolera","Ibai Garate Font","Valentina Sayol","Biel Batuecas Mas","Pau Teixido Alsina","Pol Lozano Salleras","Magalí Nadal Aguiló","Mateu Julia","Oriol Ruiz Meca","Chloé Berdié Fernández","Antonio Llinares","Mario Jiménez Romero","Bruno Pérez Sanz","Valentina Lía Sayol Garcia","Martina Fontanet Flores"],"Granollers":["Aleix Guerrero","Xavier López López","Mikel","Alex Rodriguez Olid","Sergi Garrigo Viade","Aleix Pannon","Aitor Valderrama Ruiz","Lluc Marturia Vila","Jose Antonio García Jiménez","Lleó Sàbat Ruiz","Teo Santafe Ruiz","Eloi Roman Pañella","Pau Vidal Gonzalez","Ona Parra","Joel Pacheco Martín","Aleix Pannon Joher","Dafne Muñoz"],"Cornellà":["David Olivares Román","Roger Morell Pàmies","Biel Rios Sanz","Kenzo Hayashi Martínez","Iker Quirantes Tostado","Martí Martínez Bargalló","Carla Rossi Fernández","Lucas Compte de Castellarnau","David Gil Podda","Kailash Urosa","Emir Montoya Lopez","Iker Martínez Patón","Pau Ruz Ponce","Chloe Cea Vidal","Leo Navarro Garcia","Jan Marco Mateo","Nicolas Lao Beltran","Paula Anglade Peñalver","Carla Anglade Peñalver","Albert Aycart Calderón","Erik Sánchez Gayete","Marcel Fernàndez Andreu","Álvaro González Echenique","Nil Vicente Encuentra","Guillem Cañete Ros","Alejandro López Moral","Aníbal Garriga Caballero","Leo Moreno Sanchez","Pablo Sanchez Martinez","Biel Sánchez Gómez","Pau Monjo Sanchiz","Víctor Pérez Pérez","Leo Trabazos Ojeda","Marc Vila Villahoz","Kailash Urosa Jovani","Katia Podda","Guillem Torrell Ayza","Unai Dominguez Izquierdo","Pau del Prado Moya","Alvaro Barredo","Laia Minoves","Biel Vallez Garcia","Marti Vallez Garcia","Hugo Robles","Oriol Ponsico","Alex Luna Martínez"],"Abrera":["Niah Cano Morcillo","Jan Cervelló Andújar","Izaro Gamazo Barrera","Unai López Jiménez","Dídac Belmar Trull","Queralt Raventós","Carla Mejías Maraver","Anna Ripoll Llorens","Daniela Llopart Bautista","Bruno Medina","Francesc Rius Font","Zoe López Lozano","Abril Jozan Casanovas","Bruno Ramallo Gil","Sabina Sicilia Pérez","Biel Brull Torra","Nahuel Sosa Navas","Vega Pérez Mesa","Bruno Medina Nieto","Guillem Salvadó Beltrán","Nil Saladie Iglesias","Samuel Iraola Llorente","Joan Ferran Giralt","Bernat Jimenez Lage","Maria Jimenez Lage","Hugo Gomez Terrón"],"Manresa":["Daniella Vilet Portugal","Maria Gonfaus Gómez","Marc Ramon Coll","Aleix Fernandez Sanglas","Biel Pérez Garcia","Laia Verdaguer Fernández"]},"tornada":{"Balaguer":["Queralt Solé Roca","Àlex Aguilà Egozcue","Mar Matamoros Bota","Èlia Tribó Valls","Aleix Gil Sisó","Iker Membrives Vázquez","Bruna Riera Font","Oriol Capdevila Balcells","Abril Granado","Júlia Granado","Xenia Vila Ortiz","Ona Carrera Pintó","Duna Fernandez Gilabert","Júlia Gilabert Mitjavila","Josep Miquel Gallart Olivero","Aran Bonillo","Lis Garcia Corrales","Núria Marcos Figueres","Leire Daza Risco","Martina Seró Canchal","Carla Castellà Novell","Gal·la Sabaté Esquerda","Marina Balgueró Querol","Xavi Pampols Teixido","Joan Solsona Sanchez","Roger Blanco Pellicer","Xavi Sanz Rodríguez"],"Mataró":["Marc Galán Teixidó","Noa Barranco Escobero","Martina Grasas","Òscar Clos i Riera","Pau Estrella Romero","Oriol Sancho","Denis Fontanet","Carles Humet Garolera","Ibai Garate Font","Valentina Sayol","Biel Batuecas Mas","Pau Teixido Alsina","Pol Lozano Salleras","Magalí Nadal Aguiló","Mateu Julia","Oriol Ruiz Meca","Chloé Berdié Fernández","Antonio Llinares","Mario Jiménez Romero","Bruno Pérez Sanz","Valentina Lía Sayol Garcia","Adriana Pons Redondo *(només tornada)*","Lucas Rodriguez Calzado","Martina Fontanet Flores"],"Granollers":["Aleix Guerrero","Xavier López López","Mikel","Alex Rodriguez Olid","Sergi Garrigo Viade","Aleix Pannon","Aitor Valderrama Ruiz","Lluc Marturia Vila","Jose Antonio García Jiménez","Lleó Sàbat Ruiz","Teo Santafe Ruiz","Eloi Roman Pañella","Pau Vidal Gonzalez","Ona Parra","Joel Pacheco Martín","Aleix Pannon Joher","Dafne Muñoz"],"Cornellà":["David Olivares Román","Roger Morell Pàmies","Biel Rios Sanz","Kenzo Hayashi Martínez","Iker Quirantes Tostado","Martí Martínez Bargalló","Carla Rossi Fernández","Lucas Compte de Castellarnau","David Gil Podda","Kailash Urosa","Emir Montoya Lopez","Iker Martínez Patón","Pau Ruz Ponce","Chloe Cea Vidal","Leo Navarro Garcia","Jan Marco Mateo","Nicolas Lao Beltran","Paula Anglade Peñalver","Carla Anglade Peñalver","Albert Aycart Calderón","Erik Sánchez Gayete","Marcel Fernàndez Andreu","Álvaro González Echenique","Nil Vicente Encuentra","Guillem Cañete Ros","Alejandro López Moral","Aníbal Garriga Caballero","Leo Moreno Sanchez","Pablo Sanchez Martinez","Biel Sánchez Gómez","Pau Monjo Sanchiz","Víctor Pérez Pérez","Leo Trabazos Ojeda","Marc Vila Villahoz","Kailash Urosa Jovani","Katia Podda","Guillem Torrell Ayza","Unai Dominguez Izquierdo","Pau del Prado Moya","Judith Escolar Barata *(només tornada)*","Alvaro Barredo","Laia Minoves","Hugo Robles","Alex Luna Martínez"],"Abrera":["Niah Cano Morcillo","Jan Cervelló Andújar","Izaro Gamazo Barrera","Unai López Jiménez","Dídac Belmar Trull","Queralt Raventós","Carla Mejías Maraver","Anna Ripoll Llorens","Daniela Llopart Bautista","Bruno Medina","Francesc Rius Font","Zoe López Lozano","Abril Jozan Casanovas","Bruno Ramallo Gil","Sabina Sicilia Pérez","Biel Brull Torra","Nahuel Sosa Navas","Vega Pérez Mesa","Bruno Medina Nieto","Guillem Salvadó Beltrán","Nil Saladie Iglesias","Samuel Iraola Llorente","Genís Bartolomé Casademunt *(només tornada)*","Joan Ferran Giralt","Bernat Jimenez Lage","Maria Jimenez Lage","Hugo Gomez Terrón"],"Manresa":["Daniella Vilet Portugal","Maria Gonfaus Gómez","Marc Ramon Coll","Aleix Fernandez Sanglas","Biel Pérez Garcia","Laia Verdaguer Fernández"]},"nobus_anada":["Adrià Martell Leyva","Mar Codina Fernández","Mireia Llumà Sánchez","Aleix Llort Roset","Joel Morilla Dalmau","Aida Sebastian Torner","Marçal Maurell Ruiz","Edda Garcia Escaler","Gina Bernadas Ginovart","Queralt Font Tortras","Berta Genovès Farràs","Martí Rubió Balañà","Judith Escolar Barata *(només tornada)*","Genís Bartolomé Casademunt *(només tornada)*","Adriana Pons Redondo *(només tornada)*","Ïu Medina","Aneu","Urgell","Mar Jordan","Martí Irla"],"nobus_tornada":["Adrià Martell Leyva","Mar Codina Fernández","Mireia Llumà Sánchez","Aleix Llort Roset","Joel Morilla Dalmau","Aida Sebastian Torner","Marçal Maurell Ruiz","Edda Garcia Escaler","Gina Bernadas Ginovart","Queralt Font Tortras","Berta Genovès Farràs","Martí Rubió Balañà","Anselm Fabregat Joval *(només anada)*","Oriol Olivart Mingote *(només anada)*","Eric Alfós Herrera *(només anada)*","Marcel Sakr García *(només anada)*","Adrià Labairu Gracia *(només anada)*","Ïu Medina","Aneu","Urgell","Mar Jordan","Martí Irla","Biel Vallez Garcia","Marti Vallez Garcia","Oriol Ponsico"],"monitors":{"Mataró":["Hugo","Cristian"],"Granollers":{"anada":["Emma","Marcel","Sandra"],"tornada":["Emma","Marcel","Sandra","Paula"]},"Cornellà":["Berta","Victor S","Latorre","Chus"],"Abrera":["Luis","Victor R"],"Manresa":["Biel Gay"],"Balaguer":["Isaac"]}}
+;
+var RU_ROUTES = {"anada":[{"title":"Ruta 1 — Mataró · Abrera · Bellver","stops":[{"name":"Mataró","info":"Convoc. 08:15 · Bus 08:30 · Carrer Estrasburg, 2 · Parking Mataró Park","map":"https://goo.gl/maps/stxqh7XbyMPsCWT39"},{"name":"Abrera","info":"Convoc. 09:00 · Bus 09:15 · Av. Ca nAmat, 6 · Davant Burger King","map":"https://goo.gl/maps/kNnrEDboDXiZqscv6"}]},{"title":"Ruta 2 — Granollers · Bellver","stops":[{"name":"Granollers","info":"Convoc. 08:00 · Bus 08:15 · C/ Lluis Companys, 52 · Davant Burger King","map":"https://goo.gl/maps/x5cBqGHroeemKxo76"}]},{"title":"Ruta 3 — Balaguer · Bellver","stops":[{"name":"Balaguer","info":"Convoc. 08:00 · Bus 08:15 · C/ dUrgell, 106 · Davant Pavello Inpacsa","map":"https://goo.gl/maps/qo5JmPgcidvirsDk9"}]},{"title":"Ruta 4 — Cornella · Manresa · Bellver","stops":[{"name":"Cornellà","info":"Convoc. 08:30 · Bus 08:45 · C/ del Sorral del Riu, 5 · Parking darrere Splau","map":"https://goo.gl/maps/R8Ps2zZjmEHkz3CaA"},{"name":"Manresa","info":"Convoc. 09:20 · Bus 09:35 · Av. Universitaria, 17 · Parking McDonalds","map":"https://goo.gl/maps/2nHE5gw5cBR38ju96"}]}],"tornada":[{"title":"Ruta 1 — Bellver · Abrera · Mataro","stops":[{"name":"Mataró","info":"Bellver: 11:00h · Abrera: 12:30h · Mataro: 13:10h","map":null}]},{"title":"Ruta 2 — Bellver · Granollers","stops":[{"name":"Granollers","info":"Bellver: 11:00h · Granollers: 13:00h","map":null}]},{"title":"Ruta 3 — Bellver · Balaguer","stops":[{"name":"Balaguer","info":"Bellver: 11:00h · Balaguer: 13:00h","map":null}]},{"title":"Ruta 4 — Bellver · Manresa · Cornella","stops":[{"name":"Cornellà","info":"Bellver: 11:00h · Manresa: 12:00h · Cornella: 13:45h","map":null},{"name":"Manresa","info":"Bellver: 11:00h · Manresa: 12:00h · Cornella: 13:45h","map":null}]}]};
+
+function ruEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function ruToggle(id){var el=document.getElementById(id);var arrow=document.getElementById(id+'-arrow');if(el.style.display==='none'){el.style.display='block';if(arrow)arrow.textContent='\u25B2';}else{el.style.display='none';if(arrow)arrow.textContent='\u25BC';}}
+function ruStopCard(stopName, dir, color, bgcolor){
+  var players = (RU_DATA[dir] && RU_DATA[dir][stopName]) || [];
+  var monRaw = RU_DATA.monitors[stopName];
+  var monitors = [];
+  if(monRaw){
+    if(Array.isArray(monRaw)){ monitors = monRaw; }
+    else { monitors = monRaw[dir] || []; }
+  }
+  var safeId = 'ru-stop-' + dir + '-' + stopName.replace(/[^a-zA-Z0-9]/g,'');
+  var h = '<div style="background:'+bgcolor+';border-radius:10px;padding:12px;margin-bottom:8px">';
+  h += '<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="ruToggle(\''+safeId+'\')">';
+  h += '<div style="font-size:13px;font-weight:700;color:'+color+'">\uD83D\uDCCD '+ruEsc(stopName)+'</div>';
+  h += '<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:'+color+'">';
+  h += '<span>\uD83D\uDC65 '+players.length+' \u00b7 \uD83C\uDFC3 '+monitors.length+'</span>';
+  h += '<span id="'+safeId+'-arrow" style="font-size:10px">\u25BC</span>';
+  h += '</div></div>';
+  h += '<div id="'+safeId+'" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.08)">';
+  if(monitors.length){
+    h += '<div style="font-size:10px;font-weight:700;color:'+color+';margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">\uD83C\uDFC3 Monitors/es</div>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px">';
+    monitors.forEach(function(m){ h += '<span style="background:rgba(0,0,0,.08);color:'+color+';font-weight:700;font-size:11px;padding:3px 8px;border-radius:6px">'+ruEsc(m)+'</span>'; });
+    h += '</div>';
+  }
+  if(players.length){
+    h += '<div style="font-size:10px;font-weight:700;color:#555;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">\uD83D\uDC65 Jugadors/es</div>';
+    h += '<div style="font-size:12px;color:#333;line-height:1.7">';
+    h += players.map(function(p){ return ruEsc(p); }).join('<br>');
+    h += '</div>';
+  } else {
+    h += '<div style="font-size:11px;color:#999;font-style:italic">Sense jugadors assignats</div>';
+  }
+  h += '</div></div>';
+  return h;
+}
+function ruRouteTotal(route, dir){
+  var totalPlayers = 0, totalMonitors = 0;
+  route.stops.forEach(function(stop){
+    var players = (RU_DATA[dir] && RU_DATA[dir][stop.name]) || [];
+    totalPlayers += players.length;
+    var monRaw = RU_DATA.monitors[stop.name];
+    var monitors = [];
+    if(monRaw){
+      if(Array.isArray(monRaw)){ monitors = monRaw; }
+      else { monitors = monRaw[dir] || []; }
+    }
+    totalMonitors += monitors.length;
+  });
+  return {players: totalPlayers, monitors: totalMonitors, total: totalPlayers + totalMonitors};
+}
+function ruRenderRoutes(dir){
+  var color = dir==='anada' ? '#1565C0' : '#1B5E20';
+  var bgcolor = dir==='anada' ? '#EBF5FB' : '#E8F5E9';
+  var icon = dir==='anada' ? '\uD83D\uDE8C' : '\uD83C\uDFE0';
+  var routes = RU_ROUTES[dir];
+  var h = '';
+  routes.forEach(function(route){
+    var t = ruRouteTotal(route, dir);
+    h += '<div style="background:'+bgcolor+';border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:10px;margin-bottom:12px">';
+    h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:0 2px">';
+    h += '<div style="font-size:13px;font-weight:700;color:'+color+'">'+icon+' '+ruEsc(route.title)+'</div>';
+    h += '<div style="font-size:11px;font-weight:700;color:'+color+';background:rgba(255,255,255,.6);padding:3px 9px;border-radius:8px;white-space:nowrap">\uD83D\uDC65 '+t.total+' total</div>';
+    h += '</div>';
+    route.stops.forEach(function(stop){
+      h += '<div style="background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:6px">';
+      h += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">';
+      h += '<div style="flex:1"><strong style="font-size:12px;color:'+color+'">'+ruEsc(stop.name)+':</strong> <span style="font-size:12px;color:#444">'+ruEsc(stop.info)+'</span>';
+      if(stop.map){ h += '<br><a href="'+stop.map+'" target="_blank" style="color:'+color+';font-size:11px">\uD83D\uDCCD Mapa</a>'; }
+      h += '</div></div>';
+      h += ruStopCard(stop.name, dir, color, bgcolor);
+      h += '</div>';
+    });
+    h += '</div>';
+  });
+  // No bus / venen en cotxe section
+  var nobusKey = dir==='anada' ? 'nobus_anada' : 'nobus_tornada';
+  var nobus = RU_DATA[nobusKey] || [];
+  var safeId = 'ru-nobus-' + dir;
+  h += '<div style="background:#FFF4E5;border:1px solid #F5D9A8;border-radius:12px;padding:10px;margin-bottom:12px">';
+  h += '<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="ruToggle(\''+safeId+'\')">';
+  h += '<div style="font-size:13px;font-weight:700;color:#B07800">\uD83D\uDE97 VENEN EN COTXE</div>';
+  h += '<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:#B07800">';
+  h += '<span>\uD83D\uDC65 '+nobus.length+'</span><span id="'+safeId+'-arrow" style="font-size:10px">\u25BC</span></div></div>';
+  h += '<div id="'+safeId+'" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#333;line-height:1.7">';
+  h += nobus.map(function(p){ return ruEsc(p); }).join('<br>');
+  h += '</div></div>';
+  return h;
+}
+function ruInitRoutes(){
+  document.getElementById('ru-anada-cont').innerHTML = ruRenderRoutes('anada');
+  document.getElementById('ru-tornada-cont').innerHTML = ruRenderRoutes('tornada');
+}
+</script>
+<script>
+var NU_DATA=[
+  {n:1,nom:'Nahuel',cog:'Sosa Navas'},
+  {n:2,nom:'Aleix',cog:'Guerrero Vila'},
+  {n:3,nom:'Ona',cog:'Parra Garcia'},
+  {n:4,nom:'Xavi',cog:'Sanz Rodríguez'},
+  {n:5,nom:'Mar',cog:'Jordan Redondo'},
+  {n:6,nom:'Leire',cog:'Daza Risco'},
+  {n:7,nom:'Mateu',cog:'Julia Hernandez'},
+  {n:8,nom:'Dídac',cog:'Belmar Trull'},
+  {n:9,nom:'Xavier',cog:'López López'},
+  {n:10,nom:'Abril',cog:'Jozan Casanovas'},
+  {n:11,nom:'Martina',cog:'Seró Canchal'},
+  {n:12,nom:'Pablo',cog:'Sanchez Martinez'},
+  {n:13,nom:'Niah',cog:'Cano Morcillo'},
+  {n:14,nom:'Antonio',cog:'Llinares Gabarron'},
+  {n:15,nom:'Lluc',cog:'Marturis Vila'},
+  {n:16,nom:'Valentina lía',cog:'Sayol Garcia'},
+  {n:17,nom:'Aitor',cog:'Valderrama Ruiz'},
+  {n:18,nom:'Mirko',cog:'Jankovic Ramos'},
+  {n:19,nom:'Teo',cog:'Santafe Ruiz'},
+  {n:20,nom:'Laia',cog:'Minoves Ferrando'},
+  {n:21,nom:'Àlex',cog:'Aguilà Egozcue'},
+  {n:22,nom:'Noa',cog:'Barranco Escobero'},
+  {n:23,nom:'Oriol',cog:'Olivart Mingote'},
+  {n:24,nom:'Biel',cog:'Vallez'},
+  {n:25,nom:'Martí',cog:'Vallez Garcia'},
+  {n:26,nom:'Oriol',cog:'Capdevila Balcells'},
+  {n:27,nom:'Nil',cog:'Vicente Encuentra'},
+  {n:28,nom:'Jan',cog:'Marco Mateo'},
+  {n:29,nom:'Joel',cog:'Morilla Dalmau'},
+  {n:30,nom:'Bernat',cog:'Jiménez Lage'},
+  {n:31,nom:'Maria',cog:'Jiménez Lage'},
+  {n:32,nom:'Bruno',cog:'Medina Nieto'},
+  {n:33,nom:'Biel',cog:'Sánchez Gomez'},
+  {n:34,nom:'Leo',cog:'Moreno Sanchez'},
+  {n:35,nom:'Aleix',cog:'Pannón Joher'},
+  {n:36,nom:'Leo',cog:'Trabazos Ojeda'},
+  {n:37,nom:'Bruno',cog:'Ramallo Gil'},
+  {n:38,nom:'Iker',cog:'Membrives Vázquez'},
+  {n:39,nom:'Marc',cog:'Galán Teixidó'},
+  {n:40,nom:'Aleix',cog:'Fernandez Sanglas'},
+  {n:41,nom:'Oriol',cog:'Ruiz Meca'},
+  {n:42,nom:'Adrià',cog:'Martell Leyva'},
+  {n:43,nom:'Marcel',cog:'Fernández Andreu'},
+  {n:44,nom:'Erik',cog:'Sánchez Gayete'},
+  {n:45,nom:'Álvaro',cog:'González Echenique'},
+  {n:46,nom:'Ramon',cog:'Alfós Herrera'},
+  {n:47,nom:'Álex',cog:'Luna Martínez'},
+  {n:48,nom:'Chloe',cog:'Cea Vidal'},
+  {n:49,nom:'Biel',cog:'Brull Torra'},
+  {n:50,nom:'Paula',cog:'Anglade Peñalver'},
+  {n:51,nom:'Carla',cog:'Anglade Peñalver'},
+  {n:52,nom:'Guillem',cog:'Cañete Ros'},
+  {n:53,nom:'Izaro',cog:'Gamazo Barrera'},
+  {n:54,nom:'Francesc',cog:'Rius Font'},
+  {n:55,nom:'Vega',cog:'Pérez Mesa'},
+  {n:56,nom:'Guillem',cog:'Torrell Ayza'},
+  {n:57,nom:'Roger',cog:'Morell Pàmies'},
+  {n:58,nom:'Lucas',cog:'Compte de Castellarnau'},
+  {n:59,nom:'Pau',cog:'Estrella Romero'},
+  {n:60,nom:'Queralt',cog:'Raventós'},
+  {n:61,nom:'Josep Miquel',cog:'Gallart Olivero'},
+  {n:62,nom:'David',cog:'Olivares Román'},
+  {n:63,nom:'Judith',cog:'Escolar Barata'},
+  {n:64,nom:'Ïu',cog:'Medina Marca'},
+  {n:65,nom:'Zoe',cog:'López Lozano'},
+  {n:66,nom:'Sabina',cog:'Sicilia Pérez'},
+  {n:67,nom:'Alex',cog:'Olid Lombardero'},
+  {n:68,nom:'Unai',cog:'López Jiménez'},
+  {n:69,nom:'Jan',cog:'Cervelló Andújar'},
+  {n:70,nom:'Pau',cog:'Ruz Ponce'},
+  {n:71,nom:'Nicolas',cog:'Lao Beltran'},
+  {n:72,nom:'Biel',cog:'Batuecas Mas'},
+  {n:73,nom:'Pau',cog:'Teixidó Alsina'},
+  {n:74,nom:'Joan',cog:'Ferran Giralt'},
+  {n:75,nom:'Oriol',cog:'Sancho Terren'},
+  {n:76,nom:'Martina',cog:'Fontanet Flores'},
+  {n:77,nom:'Oriol',cog:'Ponsico López'},
+  {n:78,nom:'Pol',cog:'Lozano Salleras'},
+  {n:79,nom:'Pau',cog:'del Prado Moya'},
+  {n:80,nom:'Adrià',cog:'Labairu Gracia'},
+  {n:81,nom:'Marcel',cog:'Sakr García'},
+  {n:82,nom:'Iker',cog:'Martínez Patón'},
+  {n:83,nom:'Kenzo',cog:'Hayashi Martínez'},
+  {n:84,nom:'Carla',cog:'Rossi Fernández'},
+  {n:85,nom:'Daniella',cog:'Vilet Portugal'},
+  {n:86,nom:'Biel',cog:'Rios Sanz'},
+  {n:87,nom:'Lleó',cog:'Sàbat Ruiz'},
+  {n:88,nom:'Samuel',cog:'Iraola Llorente'},
+  {n:89,nom:'Carla',cog:'Castellà Novell'},
+  {n:90,nom:'Abril',cog:'Granado Lasheras'},
+  {n:91,nom:'Júlia',cog:'Granado Lasheras'},
+  {n:92,nom:'Xènia',cog:'Vila Ortiz'},
+  {n:93,nom:'Gal·la',cog:'Sabaté Esquerda'},
+  {n:94,nom:'Aran',cog:'Bonillo Puebla'},
+  {n:95,nom:'Bruna',cog:'Riera Font'},
+  {n:96,nom:'Álvaro',cog:'Barredo Moure'},
+  {n:97,nom:'Duna',cog:'Fernandez Gilabert'},
+  {n:98,nom:'Adriana',cog:'Pons Redondo'},
+  {n:99,nom:'Jose Antonio',cog:'García Jiménez'},
+  {n:100,nom:'Marina',cog:'Balagueró Querol'},
+  {n:101,nom:'Ona',cog:'Carrera Pintó'},
+  {n:102,nom:'Mikel',cog:'Fagundez Justes'},
+  {n:103,nom:'Jan',cog:'Serano'},
+  {n:104,nom:'Alex',cog:'Moreno Agudo'},
+  {n:105,nom:'Aníbal',cog:'Garriga Caballero'},
+  {n:106,nom:'Carla',cog:'Mejías Maraver'},
+  {n:107,nom:'Anna',cog:'Ripoll Llorens'},
+  {n:108,nom:'Xavi',cog:'Pampols Teixido'},
+  {n:109,nom:'David',cog:'Gil Podda'},
+  {n:110,nom:'Magalí',cog:'Nadal Aguiló'},
+  {n:111,nom:'Lis',cog:'Garcia Corrales'},
+  {n:112,nom:'Bruno',cog:'Pérez Gómez'},
+  {n:113,nom:'Carles',cog:'Humet Garolera'},
+  {n:114,nom:'Daniela',cog:'Llopart Bautista'},
+  {n:115,nom:'Genís',cog:'Bartolomé Casademunt'},
+  {n:116,nom:'Nil',cog:'Saladie Iglesias'},
+  {n:117,nom:'Edda',cog:'Garcia Escaler'},
+  {n:118,nom:'Mireia',cog:'Llumà'},
+  {n:119,nom:'Berta',cog:'Genovès Farràs'},
+  {n:120,nom:'Gina',cog:'Bernadas Ginovart'},
+  {n:121,nom:'Júlia',cog:'Gilabert Mitjavila'},
+  {n:122,nom:'Aida',cog:'Sebastian Torner'},
+  {n:123,nom:'Emir Isai',cog:'Montoya Lopez'},
+  {n:124,nom:'Kailash',cog:'Urosa Jovani'},
+  {n:125,nom:'Guillem',cog:'Salvado Beltran'},
+  {n:126,nom:'Joel',cog:'Pacheco Martín'},
+  {n:127,nom:'Martí',cog:'Irla Palomanes'},
+  {n:128,nom:'Albert',cog:'Aycart Calderón'},
+  {n:129,nom:'Mar',cog:'Matamoros Bota'},
+  {n:130,nom:'Queralt',cog:'Solé Roca'},
+  {n:131,nom:'Nacho',cog:'Rodriguez Iglesias'},
+  {n:132,nom:'Ibai',cog:'Garate Font'},
+  {n:133,nom:'Pau',cog:'Vidal González'},
+  {n:134,nom:'Núria',cog:'Marcos Figueres'},
+  {n:135,nom:'Hugo',cog:'Gómez Terrón'},
+  {n:136,nom:'Biel',cog:'Perez Garcia'},
+  {n:137,nom:'Marc',cog:'Ramon Coll'},
+  {n:138,nom:'Alejandro',cog:'López Moral'},
+  {n:139,nom:'Pau',cog:'Monjo Sanchiz'},
+  {n:140,nom:'Sergi',cog:'Garrigo Viade'},
+  {n:141,nom:'Mario',cog:'Jiménez Romero'},
+  {n:142,nom:'Marc',cog:'Vila Villahoz'},
+  {n:143,nom:'Chloe',cog:'Berdie Fernandez'},
+  {n:144,nom:'Òscar',cog:'Clos Riera'},
+  {n:145,nom:'Martina',cog:'Grasas Maturana'},
+  {n:146,nom:'Laia',cog:'Verdaguer Fernández'},
+  {n:147,nom:'Aleix',cog:'Llort Roset'},
+  {n:148,nom:'Àneu',cog:'Isern Fontanet'},
+  {n:149,nom:'Urgell',cog:'Isern Fontanet'},
+  {n:150,nom:'Mar',cog:'Cocina Fernandez'},
+  {n:151,nom:'Maria',cog:'Gonfaus Gomez'},
+  {n:152,nom:'Iker',cog:'Quirantes Tostado'},
+  {n:153,nom:'Martí',cog:'Martínez Bargalló'},
+  {n:154,nom:'Queralt',cog:'Font Tortras'},
+  {n:155,nom:'Marçal',cog:'Maurell Ruiz'},
+  {n:156,nom:'Aleix',cog:'Gil Sisó'},
+  {n:157,nom:'Joan',cog:'Solsona Sánchez'},
+  {n:158,nom:'Roger',cog:'Blanco Pellicer'},
+  {n:159,nom:'Lluc',cog:'Alba i Puig'},
+  {n:160,nom:'Àlex',cog:'Santesmases Garcia'},
+  {n:161,nom:'Èlia',cog:'Tribó Valls'},
+  {n:162,nom:'Lucas',cog:'Rodriguez Calzado'},
+  {n:163,nom:'Eloi',cog:'Roman Pañella'},
+  {n:164,nom:'Martí',cog:'Rubió'},
+  {n:165,nom:'Unai',cog:'Dominguez Izquierdo'},
+  {n:166,nom:'Leo',cog:'Navarro Garcia'},
+  {n:167,nom:'Anselm',cog:'Fabregat Joval'},
+  {n:168,nom:'Víctor',cog:'Pérez Pérez'},
+  {n:169,nom:'Dafne',cog:'Muñoz Jimenez'},
+  {n:170,nom:'Hugo',cog:'Robles Ubieto'},
+  {n:171,nom:'Aina',cog:'Saavedra Olivero'}
+];
+
+function nuNorm(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+
+function nuRender(list){
+  var el = document.getElementById('nu-list');
+  if(!list.length){
+    el.innerHTML = '<div style="text-align:center;padding:30px;color:#aaa;font-size:13px">Cap resultat</div>';
+    return;
+  }
+  el.innerHTML = list.map(function(p){
+    return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:.5px solid #eee">'
+      +'<div style="min-width:36px;height:36px;background:#2C6B3F;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">'+p.n+'</div>'
+      +'<div><div style="font-size:14px;font-weight:600;color:#2C3E50">'+p.nom+' '+p.cog+'</div></div>'
+      +'</div>';
+  }).join('');
+}
+
+function nuSearch(v){
+  var q = nuNorm(v);
+  if(!q){ nuRender(NU_DATA); return; }
+  // Si es número exacto
+  if(/^\d+$/.test(q.trim())){
+    var num = parseInt(q.trim());
+    nuRender(NU_DATA.filter(function(p){ return p.n === num; }));
+    return;
+  }
+  // Si es texto: buscar en nom+cog
+  nuRender(NU_DATA.filter(function(p){
+    return nuNorm(p.nom+' '+p.cog).includes(q) || nuNorm(p.cog+' '+p.nom).includes(q);
+  }));
+}
+
+function nuInit(){
+  if(!document.getElementById('nu-list').innerHTML){
+    nuRender(NU_DATA);
+  }
+}
+</script>
+</body>
+</html>
